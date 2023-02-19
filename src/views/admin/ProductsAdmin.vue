@@ -43,7 +43,7 @@
                 <button
                   type="button"
                   class="btn btn-sm btn-outline-danger ms-1"
-                  @click="openModal('delete', product)"
+                  @click="deleteProduct(product.id)"
                 >
                   刪除
                 </button>
@@ -121,31 +121,37 @@ export default {
       } else if (value === "new") {
         this.$refs.editMsg.openModal();
         this.tempProduct = { imagesUrl: [], tags: [] };
-      } else if (value === "delete") {
-        this.tempProduct = { ...prd };
       }
     },
-    deleteProduct() {
-      const url = `${VITE_URL}api/${VITE_PATH}/admin/product/${this.tempProduct.id}`;
-      this.$http
-        .delete(url)
-        .then(() => {
-          this.getProducts();
-          Swal.fire({
-            toast: true,
-            title: "已刪除產品！",
-            icon: "success",
-            timer: 2000,
-            position: "top-end",
-            showConfirmButton: false,
-          });
-        })
-        .catch((err) => {
-          Swal.fire({
-            title: err.response.data.message,
-            icon: "error",
-          });
-        });
+    deleteProduct(id) {
+      Swal.fire({
+        title: "確認是否刪除此商品？",
+        showCancelButton: true,
+        confirmButtonText: "刪除",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const url = `${VITE_URL}api/${VITE_PATH}/admin/product/${id}`;
+          this.$http
+            .delete(url)
+            .then(() => {
+              this.getProducts();
+              Swal.fire({
+                toast: true,
+                title: "已刪除產品！",
+                icon: "success",
+                timer: 2000,
+                position: "top-end",
+                showConfirmButton: false,
+              });
+            })
+            .catch((err) => {
+              Swal.fire({
+                title: err.response.data.message,
+                icon: "error",
+              });
+            });
+        }
+      });
     },
   },
   mounted() {
