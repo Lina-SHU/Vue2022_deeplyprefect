@@ -46,6 +46,7 @@
 
 <script>
 import Swal from "sweetalert2";
+const { VITE_URL } = import.meta.env;
 
 export default {
   data() {
@@ -55,7 +56,7 @@ export default {
   },
   methods: {
     login() {
-      const url = `${import.meta.env.VITE_URL}admin/signin`;
+      const url = `${VITE_URL}admin/signin`;
       this.$http
         .post(url, this.user)
         .then((res) => {

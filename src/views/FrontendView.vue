@@ -4,7 +4,7 @@
       <nav>
         <RouterLink to="/">Home</RouterLink> |
         <RouterLink to="/productlist">Productlist</RouterLink> |
-        <RouterLink to="/login">login</RouterLink>
+        <RouterLink to="/admin/products">products admin</RouterLink>
       </nav>
     </div>
   </header>

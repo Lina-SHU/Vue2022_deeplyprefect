@@ -40,6 +40,7 @@
 
 <script>
 import Swal from "sweetalert2";
+const { VITE_URL, VITE_PATH } = import.meta.env;
 
 export default {
   data() {
@@ -49,9 +50,7 @@ export default {
   },
   methods: {
     getProducts() {
-      const url = `${import.meta.env.VITE_URL}api/${
-        import.meta.env.VITE_PATH
-      }/products/all`;
+      const url = `${VITE_URL}api/${VITE_PATH}/products/all`;
       this.$http
         .get(url)
         .then((res) => {
@@ -69,9 +68,7 @@ export default {
         product_id: id,
         qty,
       };
-      const url = `${import.meta.env.VITE_URL}api/${
-        import.meta.env.VITE_PATH
-      }/cart`;
+      const url = `${VITE_URL}api/${VITE_PATH}/cart`;
       this.$http
         .post(url, { data: obj })
         .then(() => {

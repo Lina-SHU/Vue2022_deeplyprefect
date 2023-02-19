@@ -72,6 +72,7 @@
 import Swal from "sweetalert2";
 import pagination from "@/components/PaginationView.vue";
 import editModal from "@/components/EditModal.vue";
+const { VITE_URL, VITE_PATH } = import.meta.env;
 
 export default {
   components: {
@@ -87,9 +88,7 @@ export default {
   },
   methods: {
     getProducts(page = 1) {
-      const url = `${import.meta.env.VITE_URL}api/${
-        import.meta.env.VITE_PATH
-      }/admin/products?page=${page}`;
+      const url = `${VITE_URL}api/${VITE_PATH}/admin/products?page=${page}`;
       this.$http
         .get(url)
         .then((res) => {
@@ -127,9 +126,7 @@ export default {
       }
     },
     deleteProduct() {
-      const url = `${import.meta.env.VITE_URL}api/${
-        import.meta.env.VITE_PATH
-      }/admin/product/${this.tempProduct.id}`;
+      const url = `${VITE_URL}api/${VITE_PATH}/admin/product/${this.tempProduct.id}`;
       this.$http
         .delete(url)
         .then(() => {
