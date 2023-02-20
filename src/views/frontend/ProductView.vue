@@ -34,6 +34,8 @@
 
 <script>
 import Swal from "sweetalert2";
+import { mapActions } from "pinia";
+import { CartStore } from "@/stores/CartStore.js";
 const { VITE_URL, VITE_PATH } = import.meta.env;
 
 export default {
@@ -45,30 +47,13 @@ export default {
     };
   },
   methods: {
+    ...mapActions(CartStore, ["addToCart"]),
     getProduct() {
       const url = `${VITE_URL}api/${VITE_PATH}/product/${this.id}`;
       this.$http
         .get(url)
         .then((res) => {
           this.product = res.data.product;
-        })
-        .catch((err) => {
-          Swal.fire({
-            title: err.response.data.message,
-            icon: "error",
-          });
-        });
-    },
-    addToCart(id, qty = 1) {
-      const obj = {
-        product_id: id,
-        qty,
-      };
-      const url = `${VITE_URL}api/${VITE_PATH}/cart`;
-      this.$http
-        .post(url, { data: obj })
-        .then(() => {
-          alert("已將商品加入到購物車！");
         })
         .catch((err) => {
           Swal.fire({

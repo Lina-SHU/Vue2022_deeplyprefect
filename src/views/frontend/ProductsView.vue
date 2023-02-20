@@ -40,6 +40,8 @@
 
 <script>
 import Swal from "sweetalert2";
+import { CartStore } from "@/stores/CartStore.js";
+import { mapActions } from "pinia";
 const { VITE_URL, VITE_PATH } = import.meta.env;
 
 export default {
@@ -49,37 +51,13 @@ export default {
     };
   },
   methods: {
+    ...mapActions(CartStore, ["addToCart"]),
     getProducts() {
       const url = `${VITE_URL}api/${VITE_PATH}/products/all`;
       this.$http
         .get(url)
         .then((res) => {
           this.products = res.data.products;
-        })
-        .catch((err) => {
-          Swal.fire({
-            title: err.response.data.message,
-            icon: "error",
-          });
-        });
-    },
-    addToCart(id, qty = 1) {
-      const obj = {
-        product_id: id,
-        qty,
-      };
-      const url = `${VITE_URL}api/${VITE_PATH}/cart`;
-      this.$http
-        .post(url, { data: obj })
-        .then(() => {
-          Swal.fire({
-            toast: true,
-            title: "已將商品加入到購物車！",
-            icon: "success",
-            timer: 2000,
-            position: "top-end",
-            showConfirmButton: false,
-          });
         })
         .catch((err) => {
           Swal.fire({
