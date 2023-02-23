@@ -25,26 +25,35 @@
             >
               查看詳細
             </router-link>
-            <a
-              href="#"
+            <button
               class="btn btn-danger"
               @click.prevent="addToCart(product.id)"
-              >加入購物車</a
+              :disabled="isDisabled"
             >
+              加入購物車
+            </button>
           </div>
         </div>
       </div>
     </div>
+
+    <loading v-model:active="isLoading" />
   </div>
 </template>
 
 <script>
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/css/index.css";
 import Swal from "sweetalert2";
 import { CartStore } from "@/stores/CartStore.js";
-import { mapActions } from "pinia";
+import { LoadingStore } from "@/stores/LoadingStore.js";
+import { mapState, mapActions } from "pinia";
 const { VITE_URL, VITE_PATH } = import.meta.env;
 
 export default {
+  components: {
+    Loading,
+  },
   data() {
     return {
       products: [],
@@ -52,11 +61,14 @@ export default {
   },
   methods: {
     ...mapActions(CartStore, ["addToCart"]),
+    ...mapActions(LoadingStore, ["toggleLoading"]),
     getProducts() {
+      this.toggleLoading();
       const url = `${VITE_URL}api/${VITE_PATH}/products/all`;
       this.$http
         .get(url)
         .then((res) => {
+          this.toggleLoading();
           this.products = res.data.products;
         })
         .catch((err) => {
@@ -66,6 +78,9 @@ export default {
           });
         });
     },
+  },
+  computed: {
+    ...mapState(LoadingStore, ["isLoading", "isDisabled"]),
   },
   mounted() {
     this.getProducts();

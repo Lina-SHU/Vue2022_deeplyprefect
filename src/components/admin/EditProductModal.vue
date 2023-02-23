@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title fs-5">{{ temp.id ? "編輯" : "新增" }}產品</h2>
+          <h2 class="modal-title fs-5">{{ temp.id ? "編輯" : "新增" }}商品</h2>
           <button
             type="button"
             class="btn-close"
@@ -134,12 +134,12 @@
               <hr />
 
               <div class="mb-3">
-                <label for="description" class="form-label">產品描述</label>
+                <label for="description" class="form-label">商品描述</label>
                 <textarea
                   id="description"
                   type="text"
                   class="form-control"
-                  placeholder="請輸入產品描述"
+                  placeholder="請輸商品描述"
                   v-model.trim="temp.description"
                 ></textarea>
               </div>
@@ -236,6 +236,7 @@
 <script>
 import Swal from "sweetalert2";
 import Modal from "bootstrap/js/dist/modal";
+const { VITE_URL, VITE_PATH } = import.meta.env;
 
 export default {
   props: ["tempProduct"],
@@ -243,6 +244,7 @@ export default {
     return {
       fileData: "",
       temp: [],
+      editMsg: "",
     };
   },
   methods: {
@@ -258,9 +260,7 @@ export default {
     updateFile() {
       const formData = new FormData();
       formData.append("file-to-upload", this.fileData);
-      const url = `${import.meta.env.VITE_URL}api/${
-        import.meta.env.VITE_PATH
-      }/admin/upload`;
+      const url = `${VITE_URL}api/${VITE_PATH}/admin/upload`;
       this.$http
         .post(url, formData)
         .then((res) => {
@@ -275,15 +275,11 @@ export default {
     },
     editProduct() {
       // 編輯
-      let url = `${import.meta.env.VITE_URL}api/${
-        import.meta.env.VITE_PATH
-      }/admin/product/${this.temp.id}`;
+      let url = `${VITE_URL}api/${VITE_PATH}/admin/product/${this.temp.id}`;
       let method = "put";
       if (!this.temp.id) {
         // 新增
-        url = `${import.meta.env.VITE_URL}api/${
-          import.meta.env.VITE_PATH
-        }/admin/product`;
+        url = `${VITE_URL}api/${VITE_PATH}/admin/product`;
         method = "post";
       }
 
@@ -294,7 +290,7 @@ export default {
           if (!this.temp.id) {
             Swal.fire({
               toast: true,
-              title: "已新增產品！",
+              title: "新增商品成功！",
               icon: "success",
               timer: 2000,
               position: "top-end",
@@ -303,7 +299,7 @@ export default {
           } else {
             Swal.fire({
               toast: true,
-              title: "已編輯產品！",
+              title: "編輯商品成功！",
               icon: "success",
               timer: 2000,
               position: "top-end",
@@ -326,7 +322,7 @@ export default {
     },
   },
   mounted() {
-    // 新增/編輯產品視窗
+    // 新增/編商品視窗
     this.editMsg = new Modal(this.$refs.editModal);
   },
 };

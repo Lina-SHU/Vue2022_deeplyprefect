@@ -39,6 +39,10 @@ const router = createRouter({
           path: "orders",
           component: () => import("../views/admin/OrderAdmin.vue"),
         },
+        {
+          path: "coupon",
+          component: () => import("../views/admin/CouponAdmin.vue"),
+        },
       ],
     },
     {
