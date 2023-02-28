@@ -105,7 +105,7 @@ export default {
     deleteCoupon(id) {
       const url = `${VITE_URL}api/${VITE_PATH}/admin/coupon/${id}`;
       Swal.fire({
-        title: "確認是否刪除此訂單？",
+        title: "確認是否刪除此優惠券？",
         showCancelButton: true,
         confirmButtonText: "刪除",
         cancelButtonText: "取消",

@@ -29,7 +29,7 @@
               type="text"
               class="form-control"
               id="couponCode"
-              v-model="temp.code"
+              v-model.trim="temp.code"
             />
           </div>
           <div class="mb-3">
@@ -38,7 +38,8 @@
               type="number"
               class="form-control"
               id="couponDiscount"
-              v-model="temp.percent"
+              v-model.number="temp.percent"
+              max="100"
             />
           </div>
           <div class="mb-3">
@@ -103,6 +104,15 @@ export default {
       this.editMsg.hide();
     },
     editCoupon() {
+      // 
+      if (this.temp.percent > 100 || this.temp.percent < 0) {
+        Swal.fire({
+          title: "優惠券折扣需在 100 內！",
+          icon: "warning",
+        });
+        return
+      }
+
       let url = `${VITE_URL}api/${VITE_PATH}/admin/coupon/${this.temp.id}`;
       let method = "put";
       if (!this.temp.id) {
