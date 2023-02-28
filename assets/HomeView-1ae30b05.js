@@ -1,0 +1,1 @@
+import{_ as e,o,c as s,b as c}from"./index-ecfc8148.js";const t={},_={class:"home"},n=c("h1",null,"這是首頁",-1),a=[n];function r(d,i){return o(),s("div",_,a)}const f=e(t,[["render",r]]);export{f as default};
