@@ -119,12 +119,16 @@
                 </div>
                 <div class="col-lg-6 d-flex align-items-center">
                   <div class="mx-lg-4 p-45 px-lg-4 py-lg-0">
-                    <h2 class="h4 fw-normal mb-2">亮白系列</h2>
+                    <h2 class="h4 fw-normal mb-2">淡斑亮白系列</h2>
                     <p class="mb-3">
                       長期的日照導致肌膚暗沉無亮嗎？
                       為您量身打造的各階段美白計畫 讓肌膚煥然一新！
                     </p>
-                    <button tyoe="button" class="btn-go">前往</button>
+                    <router-link
+                      to="/productlist?category=淡斑亮白系列"
+                      class="btn-go text-primary-dark"
+                      >前往</router-link
+                    >
                   </div>
                 </div>
               </li>
@@ -142,7 +146,11 @@
                     <p class="mb-3">
                       總覺得肌膚嚴重缺水嗎？ 無論哪個季節都得讓肌膚喝飽 避免乾裂
                     </p>
-                    <button tyoe="button" class="btn-go">前往</button>
+                    <router-link
+                      to="/productlist?category=深層保濕系列"
+                      class="btn-go text-primary-dark"
+                      >前往</router-link
+                    >
                   </div>
                 </div>
               </li>
@@ -160,7 +168,11 @@
                     <p class="mb-3">
                       逆齡回到肌膚黃金狀態 維持光亮滑順 讓肌膚維持超緊實超自然
                     </p>
-                    <button tyoe="button" class="btn-go">前往</button>
+                    <router-link
+                      to="/productlist?category=頂級呵護系列"
+                      class="btn-go text-primary-dark"
+                      >前往</router-link
+                    >
                   </div>
                 </div>
               </li>
