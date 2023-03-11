@@ -1,0 +1,99 @@
+.bg-Banner{
+  background-position: center left 55%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $primary;
+  height: 349px;
+  @media (min-width: 992px) {
+    background-position: top right 28%;
+    background-size: contain;
+    height: 609px;
+  }
+}
+
+.bg-home{
+  background-color: $secondary;
+  @media (min-width: 992px) {
+    background: linear-gradient(to right, $primary 50%, $secondary 50%)
+  }
+}
+
+.bg-homeSection{
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 50%, $secondary 50%);
+}
+
+.bg-whiteBlock{
+  height: 485px;
+  width: 500px;
+  z-index: 1;
+}
+
+.bg-innerHotProducts{
+  background: $secondary;
+  @media (min-width: 992px) {
+    background-color: $white;
+  }
+}
+
+.img-home{
+  height: 609px;
+  max-width: 90vw;
+}
+
+.padding-hotProducts{
+  padding-top: $spacer * 3.25;
+  padding-bottom: $spacer * 3.25;
+  @media (min-width: 992px) {
+    padding-top: 233px;
+    padding-bottom: 152px;
+  }
+}
+
+.btn-cta{
+  border: 2px solid white;
+  padding: 8px 20px;
+  &:hover{
+    border: 2px solid $primary;
+  }
+}
+
+.btn-go{
+  background-color: $primary;
+  padding: 10px 20px;
+  border: none;
+  &:hover{
+    background-color: $secondary;
+  }
+}
+
+.bg-white-opacity{
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.banner-cta{
+  padding: 40px;
+  bottom: 10%;
+  left: 10%;
+  @media (min-width: 992px) {
+    width: 55vw;
+    bottom: -15%;
+    left: 0;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    padding-right: 126px;
+  }
+}
+
+.font-banner{
+  font-size: 20px;
+  @media (min-width: 992px) {
+    font-size: 36px;
+  }
+}
+
+.home-width{
+  width: 100%;
+  @media (min-width: 992px) {
+      width: 50%;
+    }
+}

@@ -1,23 +1,17 @@
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink> |
-        <RouterLink to="/productlist">Productlist</RouterLink> |
-        <RouterLink to="/admin/products">products admin</RouterLink>
-      </nav>
-    </div>
-  </header>
+  <HeaderView></HeaderView>
   <RouterView />
+  <FooterView></FooterView>
 </template>
 
 <script>
-import { RouterLink, RouterView } from "vue-router";
+import FooterView from "../components/frontend/FooterView.vue";
+import HeaderView from "../components/frontend/HeaderView.vue";
 
 export default {
   components: {
-    RouterLink,
-    RouterView,
+    HeaderView,
+    FooterView,
   },
 };
 </script>
