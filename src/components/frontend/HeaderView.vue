@@ -21,10 +21,7 @@
         <div class="collapse navbar-collapse ms-auto" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link
-                to="/productlist"
-                class="nav-link active pe-0 pe-lg-4"
-              >
+              <router-link to="/productlist" class="nav-link pe-0 pe-lg-4">
                 保養去
               </router-link>
             </li>

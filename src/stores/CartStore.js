@@ -22,6 +22,7 @@ export const CartStore = defineStore("CartStore", {
         .post(url, { data: obj })
         .then(() => {
           loading.toggleDisabled();
+          this.getCart();
           Swal.fire({
             toast: true,
             title: "已將商品加入到購物車！",

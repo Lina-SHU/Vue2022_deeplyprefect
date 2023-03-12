@@ -8,53 +8,69 @@
         aria-label="Close"
       ></button>
     </div>
-    <div class="offcanvas-body d-flex flex-column justify-content-between">
-      <table class="table">
-        <tbody class="align-middle">
-          <tr v-for="cart in carts.carts" :key="cart">
-            <td width="25%">
-              <img
-                :src="cart.product.imageUrl"
-                :alt="cart.name"
-                class="img-fluid"
-              />
-            </td>
-            <td>
-              <div class="input-group align-items-center">
-                <select
-                  class="form-select"
-                  v-model="cart.qty"
-                  @change="changeCartItem(cart)"
-                  :disabled="isDisabled"
-                >
-                  <option :value="i" v-for="i in 20" :key="i">
-                    {{ i }}
-                  </option>
-                </select>
-              </div>
-            </td>
-            <td>
-              <p class="text-primary-dark mb-0">{{ cart.product.title }}</p>
-              <p>{{ cart.final_total }}</p>
-            </td>
-            <td>
-              <a href="#" @click="deleteCartItem(cart.id)">
-                <i class="bi bi-trash3 text-danger"></i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="5" class="text-end">
-              總金額： $ {{ carts.final_total }} 元
-            </td>
-          </tr>
-        </tfoot>
-      </table>
-      <button type="button" class="btn btn-primary d-block w-100">
-        立即結帳
-      </button>
+    <div class="offcanvas-body">
+      <div v-if="!carts.carts?.length">
+        <p class="text-center">目前購物車是空的喔！</p>
+        <router-link
+          to="/productlist"
+          class="btn btn-primary d-block w-100"
+          @click.prevent="closeOffcanvas"
+          >保養去</router-link
+        >
+      </div>
+      <div v-else class="d-flex flex-column justify-content-between h-100">
+        <table class="table">
+          <tbody class="align-middle">
+            <tr v-for="cart in carts.carts" :key="cart">
+              <td width="25%">
+                <img
+                  :src="cart.product.imageUrl"
+                  :alt="cart.name"
+                  class="img-fluid"
+                />
+              </td>
+              <td>
+                <div class="input-group align-items-center">
+                  <select
+                    class="form-select"
+                    v-model="cart.qty"
+                    @change="changeCartItem(cart)"
+                    :disabled="isDisabled"
+                  >
+                    <option :value="i" v-for="i in 20" :key="i">
+                      {{ i }}
+                    </option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <p class="text-primary-dark mb-0">{{ cart.product.title }}</p>
+                <p>{{ cart.final_total }}</p>
+              </td>
+              <td>
+                <a href="#" @click.prevent="deleteCartItem(cart.id)">
+                  <i class="bi bi-trash3 text-danger"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5" class="text-end">
+                總金額： $ {{ carts.final_total }} 元
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+        <router-link
+          to="/checkCart"
+          type="button"
+          class="btn btn-primary d-block w-100"
+          @click="closeOffcanvas"
+        >
+          立即結帳
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -82,7 +98,7 @@ export default {
   },
   computed: {
     ...mapState(CartStore, ["carts"]),
-    ...mapState(LoadingStore, ["isDisabled"])
+    ...mapState(LoadingStore, ["isDisabled"]),
   },
   mounted() {
     this.cartMsg = new Offcanvas(this.$refs.cartOffcanvas);

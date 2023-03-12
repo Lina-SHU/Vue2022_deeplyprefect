@@ -3,7 +3,7 @@
     <section class="bg-homeSection position-relative">
       <div class="bg-prds bg-white">
         <!-- 商品列表主視覺 -->
-        <section
+        <div
           class="bg-prdBanner position-relative"
           style="
             background-image: url('https://storage.googleapis.com/vue-course-api.appspot.com/lina-vueapi/1678512915804.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=pnckhrydpMiGCh9s0c1zurOQyVc065g7p780s6vn9KzxeQexCupYBlHVAI12AhvG2jmwAwncUB6iB01ll%2BePDiFSheSvgDagP061T6iIIeexufhBtIu3vG5qwvLN9xnyE1S%2BU7dOtjYDtKSOWuYUCuj9LkMj2lOQkgplcWCsXNj2Qj0m%2Fq6JKIXN4FTqB5j8k8zNlnW2csjYqKatTzGvFenwZdSiPwffe%2FXj9B9YF7A3PE4D%2BH2M8x0IELnhmn8bF5bCY7x69pEaF5i8nmMbFqdv%2BVoEcI0FxoPIIf5n0AQOQd4u0IpWb6S%2BAveEC9tKUeW4dGNOqkEqWPSisa4mYg%3D%3D');
@@ -14,7 +14,7 @@
               <h2 class="font-banner text-primary-dark">保養去</h2>
             </div>
           </div>
-        </section>
+        </div>
         <!-- 商品列表 -->
         <div
           class="d-none d-lg-block bg-whiteBlock bg-white-opacity position-absolute end-0 bottom-0"
