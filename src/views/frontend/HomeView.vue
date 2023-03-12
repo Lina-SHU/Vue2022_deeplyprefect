@@ -169,7 +169,7 @@ import HotProduct from "../../components/frontend/HotProduct.vue";
 
 export default {
   components: {
-    HotProduct
+    HotProduct,
   },
 };
 </script>

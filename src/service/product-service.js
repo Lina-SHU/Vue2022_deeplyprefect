@@ -17,4 +17,19 @@ export default {
       };
     }
   },
+  getProduct: async function (id) {
+    try {
+      const url = `${VITE_URL}api/${VITE_PATH}/product/${id}`;
+      const res = await axios.get(url);
+      return {
+        isSuccess: true,
+        product: res.data.product,
+      };
+    } catch (error) {
+      return {
+        isSuccess: false,
+        msg: error.response.data.message
+      }
+    }
+  }
 };

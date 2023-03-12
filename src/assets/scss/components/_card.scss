@@ -1,0 +1,21 @@
+.card-content {
+  top: 300px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  transition: 1s ease;
+  opacity: 0;
+  background: rgba(#000, .6);
+}
+
+.card-image {
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover .card-content {
+    opacity: 1;
+    top: 0;
+  }
+}

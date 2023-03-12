@@ -82,22 +82,7 @@
                   v-for="prd in productList"
                   :key="prd.id"
                 >
-                  <router-link
-                    :to="`/product/${prd.id}`"
-                    class="card text-dark border-0 rounded-0"
-                  >
-                    <div class="ratio ratio-1x1">
-                      <img
-                        :src="prd.imageUrl"
-                        class="img-fluid"
-                        alt="prd.title"
-                      />
-                    </div>
-                    <div class="card-body p-2">
-                      <h5 class="fs-6 card-title">{{ prd.title }}</h5>
-                      <p class="card-text">${{ prd.price }}</p>
-                    </div>
-                  </router-link>
+                  <CardComponent :prd="prd"></CardComponent>
                 </div>
               </div>
             </div>
@@ -114,14 +99,15 @@
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/css/index.css";
 import Swal from "sweetalert2";
-import { CartStore } from "@/stores/CartStore.js";
 import { LoadingStore } from "@/stores/LoadingStore.js";
 import { mapState, mapActions } from "pinia";
 import productSrv from "../../service/product-service.js";
+import CardComponent from "../../components/frontend/CardComponent.vue";
 
 export default {
   components: {
     Loading,
+    CardComponent,
   },
   data() {
     return {
@@ -129,7 +115,6 @@ export default {
     };
   },
   methods: {
-    ...mapActions(CartStore, ["addToCart"]),
     ...mapActions(LoadingStore, ["toggleLoading"]),
     getProducts() {
       this.toggleLoading();
@@ -147,7 +132,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(LoadingStore, ["isLoading", "isDisabled"]),
+    ...mapState(LoadingStore, ["isLoading"]),
     productList() {
       if (!this.$route.query.category) return this.products;
       const result = this.products.filter((item) =>
@@ -173,7 +158,6 @@ export default {
   },
   mounted() {
     this.getProducts();
-    console.log(this.$route.query.category);
   },
 };
 </script>

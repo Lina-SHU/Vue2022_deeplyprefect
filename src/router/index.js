@@ -24,6 +24,22 @@ const router = createRouter({
           path: "login",
           component: () => import("../views/frontend/LoginView.vue"),
         },
+        {
+          path: "checkCart",
+          component: () => import("../views/frontend/CheckCart.vue"),
+        },
+        {
+          path: "checkInfo",
+          component: () => import("../views/frontend/CheckInfo.vue"),
+        },
+        {
+          path: "orderConfirm",
+          component: () => import("../views/frontend/OrderConfirm.vue"),
+        },
+        {
+          path: "orderCompleted",
+          component: () => import("../views/frontend/OrderCompleted.vue"),
+        },
       ],
     },
     {

@@ -3,7 +3,9 @@
     class="position-fixed top-0 start-0 end-0 navbar navbar-expand-lg navbar-light bg-white-opacity z-index-5 py-3"
   >
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">DeeplyPrefect</a>
+      <router-link to="/" class="navbar-brand" href="#"
+        >DeeplyPrefect</router-link
+      >
       <div class="ms-auto">
         <button
           class="navbar-toggler"
@@ -35,9 +37,24 @@
           </ul>
         </div>
       </div>
-      <a href="#">
+      <a href="#" @click.prevent="openOffcanvas">
         <img src="../../assets/img/cart.png" alt="購物車" />
       </a>
     </div>
   </nav>
+  <CartOffcanvas ref="offcanvas"></CartOffcanvas>
 </template>
+<script>
+import CartOffcanvas from "./CartOffcanvas.vue";
+
+export default {
+  components: {
+    CartOffcanvas,
+  },
+  methods: {
+    openOffcanvas() {
+      this.$refs.offcanvas.openOffcanvas();
+    },
+  },
+};
+</script>

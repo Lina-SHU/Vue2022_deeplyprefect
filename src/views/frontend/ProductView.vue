@@ -20,7 +20,7 @@
         ></div>
         <div class="container position-relative z-index-3 py-7">
           <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10 col-md-8">
               <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
@@ -134,8 +134,8 @@ import Swal from "sweetalert2";
 import { mapState, mapActions } from "pinia";
 import { CartStore } from "@/stores/CartStore.js";
 import { LoadingStore } from "@/stores/LoadingStore.js";
-const { VITE_URL, VITE_PATH } = import.meta.env;
 import HotProduct from "../../components/frontend/HotProduct.vue";
+import productSrv from "../../service/product-service.js";
 
 export default {
   components: {
@@ -155,12 +155,10 @@ export default {
     getProduct() {
       this.toggleLoading();
       this.id = this.$route.params.id;
-      const url = `${VITE_URL}api/${VITE_PATH}/product/${this.id}`;
-      this.$http
-        .get(url)
-        .then((res) => {
+      productSrv.getProduct(this.id).then((data) => {
+        if (data.isSuccess) {
           this.toggleLoading();
-          this.product = res.data.product;
+          this.product = data.product;
           // 描述
           const content = this.product.content
             .split("<br>")
@@ -173,13 +171,13 @@ export default {
             .map((item) => `<li>${item}</li>`)
             .join("");
           this.product.descList = `<ul>${desc}</ul>`;
-        })
-        .catch((err) => {
+        } else {
           Swal.fire({
-            title: err.response.data.message,
+            title: data.msg,
             icon: "error",
           });
-        });
+        }
+      });
     },
   },
   computed: {

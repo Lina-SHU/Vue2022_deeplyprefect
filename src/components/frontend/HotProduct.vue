@@ -14,18 +14,7 @@
     }"
   >
     <swiper-slide v-for="prd in products" :key="prd.id">
-      <router-link
-        :to="`/product/${prd.id}`"
-        class="card text-dark border-0 rounded-0"
-      >
-        <div class="ratio ratio-1x1">
-          <img :src="prd.imageUrl" class="img-fluid" alt="prd.title" />
-        </div>
-        <div class="card-body p-2">
-          <h5 class="fs-6 card-title">{{ prd.title }}</h5>
-          <p class="card-text">${{ prd.price }}</p>
-        </div>
-      </router-link>
+      <CardComponent :prd="prd"></CardComponent>
     </swiper-slide>
   </swiper>
 </template>
@@ -35,11 +24,13 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import Swal from "sweetalert2";
 import productSrv from "../../service/product-service.js";
+import CardComponent from "../../components/frontend/CardComponent.vue";
 
 export default {
   components: {
     Swiper,
     SwiperSlide,
+    CardComponent
   },
   data() {
     return {
