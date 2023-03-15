@@ -33,11 +33,11 @@ const router = createRouter({
           component: () => import("../views/frontend/CheckInfo.vue"),
         },
         {
-          path: "orderConfirm",
+          path: "orderConfirm/:id",
           component: () => import("../views/frontend/OrderConfirm.vue"),
         },
         {
-          path: "orderCompleted",
+          path: "orderCompleted/:id",
           component: () => import("../views/frontend/OrderCompleted.vue"),
         },
       ],

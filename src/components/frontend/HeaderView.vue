@@ -34,7 +34,12 @@
           </ul>
         </div>
       </div>
-      <a href="#" @click.prevent="openOffcanvas">
+      <a href="#" class="position-relative" @click.prevent="openOffcanvas">
+        <p
+          class="cartNumIcon d-flex jusitfy-content-center align-items-center position-absolute bg-danger text-white rounded-circle mb-0"
+        >
+          {{ cartNum }}
+        </p>
         <img src="../../assets/img/cart.png" alt="購物車" />
       </a>
     </div>
@@ -43,6 +48,8 @@
 </template>
 <script>
 import CartOffcanvas from "./CartOffcanvas.vue";
+import { mapState } from "pinia";
+import { CartStore } from "@/stores/CartStore.js";
 
 export default {
   components: {
@@ -52,6 +59,9 @@ export default {
     openOffcanvas() {
       this.$refs.offcanvas.openOffcanvas();
     },
+  },
+  computed: {
+    ...mapState(CartStore, ["cartNum"]),
   },
 };
 </script>

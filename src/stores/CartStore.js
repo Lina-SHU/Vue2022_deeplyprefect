@@ -8,6 +8,11 @@ export const CartStore = defineStore("CartStore", {
   state: () => ({
     carts: [],
   }),
+  getters: {
+    cartNum: ({ carts }) => {
+      return carts.carts?.length || 0;
+    },
+  },
   actions: {
     addToCart(id, qty = 1) {
       const loading = LoadingStore();

@@ -48,7 +48,7 @@
               <thead class="text-center">
                 <tr>
                   <th>品名</th>
-                  <th class="d-none d-lg-block">單價</th>
+                  <th class="d-none d-lg-table-cell">單價</th>
                   <th>數量/單位</th>
                   <th>小計</th>
                   <th></th>
@@ -56,8 +56,13 @@
               </thead>
               <tbody v-if="!carts.carts?.length">
                 <tr>
-                  <td colspan="5" class="py-3 text-center text-dark">
-                    目前購物車是空的喔！
+                  <td colspan="5" class="py-5 text-center text-dark">
+                    <p class="mb-3">目前購物車是空的喔！</p>
+                    <router-link
+                      to="/productlist"
+                      class="btn btn-lg btn-primary"
+                      >保養去</router-link
+                    >
                   </td>
                 </tr>
               </tbody>
@@ -75,7 +80,9 @@
                       {{ cart.product.title }}
                     </router-link>
                   </td>
-                  <td class="text-end d-none d-lg-block">{{ cart.product.price }}</td>
+                  <td class="text-end d-none d-lg-table-cell">
+                    {{ cart.product.price }}
+                  </td>
                   <td>
                     <div class="input-group align-items-center">
                       <select
@@ -104,7 +111,9 @@
               v-if="carts.carts?.length"
               class="d-flex justify-content-between"
             >
-              <router-link to="/productlist" class="btn btn-outline-primary-dark"
+              <router-link
+                to="/productlist"
+                class="btn btn-outline-primary-dark"
                 >繼續購物</router-link
               >
               <div>
@@ -129,12 +138,6 @@ import { LoadingStore } from "@/stores/LoadingStore.js";
 export default {
   methods: {
     ...mapActions(CartStore, ["getCart", "changeCartItem", "deleteCartItem"]),
-    openOffcanvas() {
-      this.cartMsg.show();
-    },
-    closeOffcanvas() {
-      this.cartMsg.hide();
-    },
   },
   computed: {
     ...mapState(CartStore, ["carts"]),

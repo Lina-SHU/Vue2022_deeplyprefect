@@ -119,8 +119,8 @@ export default {
     getProducts() {
       this.toggleLoading();
       productSrv.getProducts().then((data) => {
+        this.toggleLoading();
         if (data.isSuccess) {
-          this.toggleLoading();
           this.products = data.products;
         } else {
           Swal.fire({
