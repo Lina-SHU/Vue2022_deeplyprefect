@@ -18,18 +18,36 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+        <div
+          ref="navbar"
+          class="collapse navbar-collapse ms-auto"
+          id="navbarNav"
+        >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link to="/productlist" class="nav-link pe-0 pe-lg-4">
+              <router-link
+                to="/productlist"
+                class="nav-link py-3 py-lg-0 px-4"
+                @click.prevent="this.$refs.navbar.classList.remove('show')"
+              >
                 保養去
               </router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-0 px-lg-4" href="#">客製保養</a>
+              <a
+                class="nav-link py-3 py-lg-0 px-4"
+                href="#"
+                @click.prevent="this.$refs.navbar.classList.remove('show')"
+                >客製保養</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link ps-0 px-lg-4" href="#">部落格</a>
+              <a
+                class="nav-link py-3 py-lg-0 px-4"
+                href="#"
+                @click.prevent="this.$refs.navbar.classList.remove('show')"
+                >部落格</a
+              >
             </li>
           </ul>
         </div>
@@ -65,3 +83,20 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.navbar-collapse {
+  @media (max-width: 992px) {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+  }
+}
+
+.navbar-nav .nav-link {
+  @media (max-width: 992px) {
+    background-color: #fff;
+  }
+}
+</style>

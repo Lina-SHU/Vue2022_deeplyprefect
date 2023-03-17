@@ -22,7 +22,110 @@
         <div class="container bg-white position-relative z-index-3 py-5">
           <div class="row">
             <div class="col-md-3">
-              <ul class="list-unstyled position-sticky top-0 left-0 w-75">
+              <!-- MB -->
+              <div class="d-lg-none mb-3">
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button
+                      class="nav-link active"
+                      id="nav-home-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#nav-home"
+                      type="button"
+                      role="tab"
+                    >
+                      全部商品
+                    </button>
+                    <button
+                      class="nav-link"
+                      id="nav-type-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#nav-type"
+                      type="button"
+                      role="tab"
+                    >
+                      系列商品
+                    </button>
+                    <button
+                      class="nav-link"
+                      id="nav-contact-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#nav-contact"
+                      type="button"
+                      role="tab"
+                    >
+                      商品分類
+                    </button>
+                  </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                  <div
+                    class="tab-pane fade show active py-4"
+                    id="nav-home"
+                    role="tabpanel"
+                    aria-labelledby="nav-home-tab"
+                  >
+                    <router-link
+                      to="/productlist"
+                      class="btn btn-primary-dark mt-1"
+                      >全部商品</router-link
+                    >
+                  </div>
+                  <div
+                    class="tab-pane fade py-4"
+                    id="nav-type"
+                    role="tabpanel"
+                    aria-labelledby="nav-type-tab"
+                  >
+                    <router-link
+                      to="/productlist?category=淡斑亮白系列"
+                      class="btn btn-primary-dark me-2 mt-1"
+                      >淡斑亮白系列</router-link
+                    >
+                    <router-link
+                      to="/productlist?category=深層保濕系列"
+                      class="btn btn-primary-dark me-2 mt-1"
+                      >深層保濕系列</router-link
+                    >
+                    <router-link
+                      to="/productlist?category=頂級呵護系列"
+                      class="btn btn-primary-dark mt-1"
+                      >頂級呵護系列</router-link
+                    >
+                  </div>
+                  <div
+                    class="tab-pane fade py-4"
+                    id="nav-contact"
+                    role="tabpanel"
+                    aria-labelledby="nav-contact-tab"
+                  >
+                    <router-link
+                      to="/productlist?category=精華水"
+                      class="btn btn-primary-dark me-2 mt-1"
+                      >精華水</router-link
+                    >
+                    <router-link
+                      to="/productlist?category=精華液"
+                      class="btn btn-primary-dark me-2 mt-1"
+                      >精華液</router-link
+                    >
+                    <router-link
+                      to="/productlist?category=精華霜"
+                      class="btn btn-primary-dark me-2 mt-1"
+                      >精華霜</router-link
+                    >
+                    <router-link
+                      to="/productlist?category=洗顏乳"
+                      class="btn btn-primary-dark mt-1"
+                      >洗顏乳</router-link
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- PC -->
+              <ul
+                class="d-none d-lg-block list-unstyled position-sticky top-0 left-0 w-75"
+              >
                 <li class="mb-45">
                   <h3 class="fs-5 border-bottom text-primary-dark pb-1 mb-3">
                     全部商品
@@ -161,3 +264,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.nav-tabs,
+.nav-tabs .nav-link,
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  border: none;
+}
+</style>

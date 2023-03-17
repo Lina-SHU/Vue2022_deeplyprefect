@@ -45,7 +45,7 @@
               </td>
               <td>
                 <p class="text-primary-dark mb-0">{{ cart.product.title }}</p>
-                <p>{{ cart.final_total }}</p>
+                <p>{{ $currency(cart.final_total) }}</p>
               </td>
               <td>
                 <a href="#" @click.prevent="deleteCartItem(cart.id)">
@@ -57,7 +57,7 @@
           <tfoot>
             <tr>
               <td colspan="5" class="text-end">
-                總金額： $ {{ carts.final_total }} 元
+                總金額： $ {{ $currency(carts.final_total) }} 元
               </td>
             </tr>
           </tfoot>

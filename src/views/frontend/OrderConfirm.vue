@@ -68,23 +68,23 @@
                       />
                     </div>
                     <router-link :to="`/product/${order.product.id}`">
-                      {{ order.product.title }}
+                      {{ $currency(order.product.title) }}
                     </router-link>
                   </td>
                   <td class="text-end">
-                    {{ order.product.price }}
+                    {{ $currency(order.product.price) }}
                   </td>
                   <td class="text-center">
                     {{ order.qty }}
                     {{ order.product.unit }}
                   </td>
-                  <td class="text-end">{{ order.final_total }}</td>
+                  <td class="text-end">{{ $currency(order.final_total) }}</td>
                 </tr>
               </tbody>
             </table>
             <div class="d-flex justify-content-between px-2">
               <p>總計：</p>
-              <p>{{ order.total }}</p>
+              <p>{{ $currency(order.total) }}</p>
             </div>
           </div>
           <div class="col-lg-6">
@@ -92,7 +92,9 @@
               <tbody>
                 <tr>
                   <th class="px-3 py-3">下單日期</th>
-                  <td class="px-3 py-3">{{ order.create_at }}</td>
+                  <td class="px-3 py-3">
+                    {{ new Date(order.create_at * 1000).toLocaleDateString() }}
+                  </td>
                 </tr>
                 <tr>
                   <th class="px-3 py-3">訂單編號</th>
@@ -147,7 +149,7 @@ import "vue-loading-overlay/dist/css/index.css";
 
 export default {
   components: {
-    Loading
+    Loading,
   },
   data() {
     return {
@@ -184,11 +186,11 @@ export default {
         } else {
           this.$router.push(`/orderCompleted/${this.id}`);
         }
-      })
+      });
     },
   },
   computed: {
-    ...mapState(LoadingStore, ["isLoading"])
+    ...mapState(LoadingStore, ["isLoading"]),
   },
   mounted() {
     this.getOrder();

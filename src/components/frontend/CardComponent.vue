@@ -28,7 +28,7 @@
     </div>
     <div class="card-body p-2">
       <h5 class="fs-6 card-title">{{ prd.title }}</h5>
-      <p class="card-text">${{ prd.price }}</p>
+      <p class="card-text">${{ $currency(prd.price) }}</p>
     </div>
   </div>
 </template>

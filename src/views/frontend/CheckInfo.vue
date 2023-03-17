@@ -265,10 +265,5 @@ export default {
     ...mapState(CartStore, ["carts"]),
     ...mapState(LoadingStore, ["isLoading"])
   },
-  // mounted() {
-  //   if (!this.carts?.length) {
-  //     this.$router.push("/checkCart");
-  //   }
-  // },
 };
 </script>

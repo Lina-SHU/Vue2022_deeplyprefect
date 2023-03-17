@@ -14,6 +14,8 @@ import "vue-loading-overlay/dist/css/index.css";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
+import currency from "./assets/js/currency";
+
 import App from "./App.vue";
 import router from "./router";
 
@@ -37,7 +39,7 @@ axios.interceptors.request.use((config) => {
 });
 
 const app = createApp(App);
-
+app.config.globalProperties.$currency = currency;
 app.use(createPinia());
 app.use(router);
 app.use(VueAxios, axios);

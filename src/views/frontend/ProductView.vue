@@ -64,9 +64,9 @@
                     <div>
                       <p class="fs-4 text-end">
                         <del class="text-danger fs-7 me-2"
-                          >$ {{ product.origin_price }}</del
+                          >$ {{ $currency(product.origin_price) }}</del
                         >
-                        $ {{ product.price }}
+                        $ {{ $currency(product.price) }}
                       </p>
                       <div class="input-group mb-3">
                         <select class="form-select" v-model="qty">

@@ -86,13 +86,13 @@
                     </router-link>
                   </td>
                   <td class="text-end">
-                    {{ order.product.price }}
+                    {{ $currency(order.product.price) }}
                   </td>
                   <td class="text-center">
                     {{ order.qty }}
                     {{ order.product.unit }}
                   </td>
-                  <td class="text-end">{{ order.final_total }}</td>
+                  <td class="text-end">{{ $currency(order.final_total) }}</td>
                 </tr>
               </tbody>
             </table>
@@ -106,7 +106,9 @@
               <tbody>
                 <tr>
                   <th class="px-3 py-3">下單日期</th>
-                  <td class="px-3 py-3">{{ order.create_at }}</td>
+                  <td class="px-3 py-3">
+                    {{ new Date(order.create_at * 1000).toLocaleDateString() }}
+                  </td>
                 </tr>
                 <tr>
                   <th class="px-3 py-3">訂單編號</th>

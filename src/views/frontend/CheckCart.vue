@@ -81,7 +81,7 @@
                     </router-link>
                   </td>
                   <td class="text-end d-none d-lg-table-cell">
-                    {{ cart.product.price }}
+                    {{ $currency(cart.product.price) }}
                   </td>
                   <td>
                     <div class="input-group align-items-center">
@@ -98,7 +98,7 @@
                       {{ cart.product.unit }}
                     </div>
                   </td>
-                  <td class="text-end">{{ cart.final_total }}</td>
+                  <td class="text-end">{{ $currency(cart.final_total) }}</td>
                   <td class="text-center">
                     <a href="#" @click.prevent="deleteCartItem(cart.id)">
                       <i class="bi bi-trash3 text-danger"></i>
@@ -117,7 +117,7 @@
                 >繼續購物</router-link
               >
               <div>
-                總金額： $ {{ carts.final_total }} 元
+                總金額： $ {{ $currency(carts.final_total) }} 元
                 <router-link to="/checkInfo" class="btn btn-primary-dark ms-2"
                   >前往結帳</router-link
                 >
