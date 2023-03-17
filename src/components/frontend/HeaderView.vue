@@ -3,9 +3,11 @@
     class="position-fixed top-0 start-0 end-0 navbar navbar-expand-lg navbar-light bg-white-opacity z-index-5 py-3"
   >
     <div class="container-fluid">
-      <router-link to="/" class="navbar-brand" href="#"
-        >DeeplyPrefect</router-link
-      >
+      <h1 class="mb-0">
+        <router-link to="/" class="navbar-brand" href="#"
+          >DeeplyPrefect
+        </router-link>
+      </h1>
       <div class="ms-auto">
         <button
           class="navbar-toggler"
@@ -85,6 +87,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  font-family: "Edu NSW ACT Foundation", cursive;
+}
+
 .navbar-collapse {
   @media (max-width: 992px) {
     position: absolute;
