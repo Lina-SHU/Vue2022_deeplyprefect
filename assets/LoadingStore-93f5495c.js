@@ -1,1 +1,0 @@
-import{k as i}from"./index-3125bab5.js";const a=i("LoadingtStore",{state:()=>({isLoading:!1,isDisabled:!1}),actions:{toggleLoading(){this.isLoading=!this.isLoading},toggleDisabled(){this.isDisabled=!this.isDisabled}}});export{a as L};
