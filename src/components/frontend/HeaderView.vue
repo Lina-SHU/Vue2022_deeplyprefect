@@ -36,6 +36,15 @@
               </router-link>
             </li>
             <li class="nav-item">
+              <router-link
+                to="/trials"
+                class="nav-link py-3 py-lg-0 px-4"
+                @click.prevent="this.$refs.navbar.classList.remove('show')"
+              >
+                立即體驗
+              </router-link>
+            </li>
+            <!-- <li class="nav-item">
               <a
                 class="nav-link py-3 py-lg-0 px-4"
                 href="#"
@@ -50,7 +59,7 @@
                 @click.prevent="this.$refs.navbar.classList.remove('show')"
                 >部落格</a
               >
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>

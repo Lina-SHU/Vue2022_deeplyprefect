@@ -23,7 +23,11 @@
         </div>
       </div>
       <div class="ratio ratio-1x1">
-        <img :src="prd.imageUrl" class="img-fluid" alt="prd.title" />
+        <img
+          :src="prd.imageUrl"
+          class="img-fluid object-cover"
+          alt="prd.title"
+        />
       </div>
     </div>
     <div class="card-body p-2">
@@ -41,10 +45,10 @@ import { LoadingStore } from "@/stores/LoadingStore.js";
 export default {
   props: ["prd"],
   methods: {
-    ...mapActions(CartStore, ["addToCart"])
+    ...mapActions(CartStore, ["addToCart"]),
   },
   computed: {
-    ...mapState(LoadingStore, ["isDisabled"])
-  }
+    ...mapState(LoadingStore, ["isDisabled"]),
+  },
 };
 </script>

@@ -78,7 +78,7 @@
                       <img
                         :src="order.product.imageUrl"
                         :alt="order.name"
-                        class="img-fluid"
+                        class="img-fluid object-cover"
                       />
                     </div>
                     <router-link :to="`/product/${order.product.id}`">

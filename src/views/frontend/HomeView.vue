@@ -14,9 +14,9 @@
           <h2 class="font-banner mb-45 mb-lg-5">
             訂製屬於您肌膚的獨特<br />保養處方
           </h2>
-          <button type="button" class="btn btn-primary-dark fs-4 px-5">
-            客製保養
-          </button>
+          <router-link to="/productlist" class="btn btn-primary-dark fs-4 px-5">
+            保養去
+          </router-link>
         </div>
       </div>
     </section>
@@ -157,9 +157,9 @@
       "
     >
       <h2 class="h4 text-white mb-4">搶先試試神奇肌效</h2>
-      <button type="button" class="btn-cta bg-white text-primary-dark">
+      <router-link to="/trials" class="btn-cta bg-white text-primary-dark">
         領取試用包
-      </button>
+      </router-link>
     </section>
   </main>
 </template>

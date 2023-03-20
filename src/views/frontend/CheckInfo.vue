@@ -64,7 +64,7 @@
                       <img
                         :src="cart.product.imageUrl"
                         :alt="cart.name"
-                        class="img-fluid"
+                        class="img-fluid object-cover"
                       />
                     </div>
                     <router-link :to="`/product/${cart.product.id}`">

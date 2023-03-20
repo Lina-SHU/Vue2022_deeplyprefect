@@ -14,35 +14,34 @@ export const CartStore = defineStore("CartStore", {
     },
   },
   actions: {
-    addToCart(id, qty = 1) {
-      const loading = LoadingStore();
-      const obj = {
-        product_id: id,
-        qty,
-      };
+    async addToCart(id, qty = 1) {
+      try {
+        const loading = LoadingStore();
+        const obj = {
+          product_id: id,
+          qty,
+        };
 
-      const url = `${VITE_URL}api/${VITE_PATH}/cart`;
-      loading.toggleDisabled();
-      axios
-        .post(url, { data: obj })
-        .then(() => {
-          loading.toggleDisabled();
-          this.getCart();
-          Swal.fire({
-            toast: true,
-            title: "已將商品加入到購物車！",
-            icon: "success",
-            timer: 2000,
-            position: "top-end",
-            showConfirmButton: false,
-          });
-        })
-        .catch((err) => {
-          Swal.fire({
-            title: err.response.data.message,
-            icon: "error",
-          });
+        const url = `${VITE_URL}api/${VITE_PATH}/cart`;
+        loading.toggleDisabled();
+        const res = await axios.post(url, { data: obj });
+
+        loading.toggleDisabled();
+        this.getCart();
+        Swal.fire({
+          toast: true,
+          title: "已將商品加入到購物車！",
+          icon: "success",
+          timer: 2000,
+          position: "top-end",
+          showConfirmButton: false,
         });
+      } catch (err) {
+        Swal.fire({
+          title: err.response.data.message,
+          icon: "error",
+        });
+      }
     },
     getCart() {
       const loading = LoadingStore();
@@ -108,5 +107,15 @@ export const CartStore = defineStore("CartStore", {
           });
         });
     },
+    async deleteAllItems() {
+      try {
+        const url = `${VITE_URL}api/${VITE_PATH}/carts`;
+        await axios.delete(url);
+        this.getCart();
+        return
+      } catch (err) {
+        return
+      }
+    }
   },
 });

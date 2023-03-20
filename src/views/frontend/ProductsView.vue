@@ -225,6 +225,11 @@ export default {
         this.toggleLoading();
         if (data.isSuccess) {
           this.products = data.products;
+          // 移除試用包
+          const trialIdx = this.products.findIndex(
+            (item) => item.id === "-NQjv0kHAdgP4A0b1Hag"
+          );
+          this.products.splice(trialIdx, 1);
         } else {
           Swal.fire({
             title: data.msg,
