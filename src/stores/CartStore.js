@@ -24,7 +24,7 @@ export const CartStore = defineStore("CartStore", {
 
         const url = `${VITE_URL}api/${VITE_PATH}/cart`;
         loading.toggleDisabled();
-        const res = await axios.post(url, { data: obj });
+        await axios.post(url, { data: obj });
 
         loading.toggleDisabled();
         this.getCart();

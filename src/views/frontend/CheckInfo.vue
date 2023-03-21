@@ -46,7 +46,7 @@
           </div>
         </div>
         <!-- 填寫資訊 -->
-        <div class="row gx-5">
+        <div class="row gx-4 gx-lg-5">
           <div class="col-lg-6">
             <table class="table">
               <thead class="text-center">
@@ -72,19 +72,19 @@
                     </router-link>
                   </td>
                   <td class="text-end">
-                    {{ cart.product.price }}
+                    {{ $currency(cart.product.price) }}
                   </td>
                   <td class="text-center">
                     {{ cart.qty }}
                     {{ cart.product.unit }}
                   </td>
-                  <td class="text-end">{{ cart.final_total }}</td>
+                  <td class="text-end">{{ $currency(cart.final_total) }}</td>
                 </tr>
               </tbody>
             </table>
             <div class="d-flex justify-content-between px-2">
               <p>小計：</p>
-              <p>{{ carts.total }}</p>
+              <p>{{ $currency(carts.total) }}</p>
             </div>
             <div class="input-group mb-3">
               <input type="text" class="form-control" v-model="couponCode" />
@@ -94,7 +94,7 @@
             </div>
             <div class="d-flex justify-content-between px-2">
               <p>總計：</p>
-              <p>{{ carts.final_total }}</p>
+              <p>{{ $currency(carts.final_total) }}</p>
             </div>
           </div>
           <div class="col-lg-6">

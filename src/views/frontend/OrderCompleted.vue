@@ -60,7 +60,7 @@
             付款失敗！請洽客服
           </p>
         </div>
-        <div class="row gx-">
+        <div class="row gx-4 gx-lg-5">
           <div class="col-lg-6">
             <table class="table">
               <thead class="text-center">
