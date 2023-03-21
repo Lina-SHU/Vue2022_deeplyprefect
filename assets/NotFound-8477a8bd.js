@@ -1,1 +1,0 @@
-import{_ as t,J as o,r as n,o as s,c as r,f as a,w as c,F as _,e as l,g as p}from"./index-ccee8868.js";const u={components:{RouterLink:o}},d=l("p",null,"404",-1);function i(f,m,k,x,N,$){const e=n("router-link");return s(),r(_,null,[d,a(e,{to:"/productlist"},{default:c(()=>[p(" 逛街去 ")]),_:1})],64)}const B=t(u,[["render",i]]);export{B as default};
