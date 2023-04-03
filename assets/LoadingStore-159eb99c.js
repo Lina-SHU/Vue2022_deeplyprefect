@@ -1,0 +1,1 @@
+import{l as i}from"./index-d49a2ec1.js";const a=i("LoadingtStore",{state:()=>({isLoading:!1,isDisabled:!1}),actions:{toggleLoading(){this.isLoading=!this.isLoading},toggleDisabled(){this.isDisabled=!this.isDisabled}}});export{a as L};
