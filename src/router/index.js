@@ -42,6 +42,14 @@ const routes = [
         path: "trials",
         component: () => import("../views/frontend/TrialsView.vue"),
       },
+      {
+        path: "custom",
+        component: () => import("../views/frontend/CustomView.vue"),
+      },
+      {
+        path: "customresult",
+        component: () => import("../views/frontend/CustomResultView.vue"),
+      },
     ],
   },
   {

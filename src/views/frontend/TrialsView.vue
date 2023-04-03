@@ -16,7 +16,7 @@
           </div>
         </div>
         <!-- 領取試用包 -->
-        <div class="container py-3 py-lg-5 py-lg-8">
+        <div class="container py-3 py-md-5 py-lg-8">
           <div class="row justify-content-center mb-3 mb-lg-5">
             <div class="col-lg-10">
               <ul class="list-unstyled">

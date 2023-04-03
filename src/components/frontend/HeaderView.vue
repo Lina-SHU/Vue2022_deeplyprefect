@@ -37,6 +37,14 @@
             </li>
             <li class="nav-item">
               <router-link
+                to="/custom"
+                class="nav-link py-3 py-lg-0 px-4"
+                @click.prevent="this.$refs.navbar.classList.remove('show')"
+                >客製保養</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link
                 to="/trials"
                 class="nav-link py-3 py-lg-0 px-4"
                 @click.prevent="this.$refs.navbar.classList.remove('show')"
@@ -45,14 +53,6 @@
               </router-link>
             </li>
             <!-- <li class="nav-item">
-              <a
-                class="nav-link py-3 py-lg-0 px-4"
-                href="#"
-                @click.prevent="this.$refs.navbar.classList.remove('show')"
-                >客製保養</a
-              >
-            </li>
-            <li class="nav-item">
               <a
                 class="nav-link py-3 py-lg-0 px-4"
                 href="#"

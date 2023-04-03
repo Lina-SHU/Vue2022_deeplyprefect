@@ -14,8 +14,8 @@
           <h2 class="font-banner mb-45 mb-lg-5">
             訂製屬於您肌膚的獨特<br />保養處方
           </h2>
-          <router-link to="/productlist" class="btn btn-primary-dark fs-4 px-5">
-            保養去
+          <router-link to="/custom" class="btn btn-primary-dark fs-4 px-5">
+            客製保養
           </router-link>
         </div>
       </div>
