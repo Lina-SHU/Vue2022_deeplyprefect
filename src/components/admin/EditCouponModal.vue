@@ -110,7 +110,15 @@ export default {
           title: "優惠券折扣需在 100 內！",
           icon: "warning",
         });
-        return
+        return;
+      }
+      // 
+      if (new Date(this.date) < new Date()) {
+        Swal.fire({
+          title: "到期日需大於今日",
+          icon: "warning",
+        });
+        return;
       }
 
       let url = `${VITE_URL}api/${VITE_PATH}/admin/coupon/${this.temp.id}`;
@@ -120,35 +128,43 @@ export default {
         method = "post";
       }
       this.temp.due_date = Math.floor(new Date(this.date) / 1000);
-      this.$http[method](url, { data: this.temp }).then(() => {
-        this.$emit("getCoupons");
-        this.closeModal();
-        if (!this.temp.id) {
+      this.$http[method](url, { data: this.temp })
+        .then(() => {
+          this.$emit("getCoupons");
+          this.closeModal();
+          if (!this.temp.id) {
+            Swal.fire({
+              toast: true,
+              title: "新增優惠券成功！",
+              icon: "success",
+              timer: 2000,
+              position: "top-end",
+              showConfirmButton: false,
+            });
+          } else {
+            Swal.fire({
+              toast: true,
+              title: "編輯優惠券成功！",
+              icon: "success",
+              timer: 2000,
+              position: "top-end",
+              showConfirmButton: false,
+            });
+          }
+          this.temp = {};
+        })
+        .catch((err) => {
           Swal.fire({
-            toast: true,
-            title: "新增優惠券成功！",
-            icon: "success",
-            timer: 2000,
-            position: "top-end",
-            showConfirmButton: false,
+            title: err.response.data.message,
+            icon: "error",
           });
-        } else {
-          Swal.fire({
-            toast: true,
-            title: "編輯優惠券成功！",
-            icon: "success",
-            timer: 2000,
-            position: "top-end",
-            showConfirmButton: false,
-          });
-        }
-        this.temp = {};
-      });
+        });
     },
   },
   watch: {
     tempCoupon() {
       this.temp = { ...this.tempCoupon };
+      this.temp.is_enabled = this.temp.is_enabled || 0;
       if (this.temp.due_date) {
         this.date = `${new Date(this.temp.due_date * 1000).getFullYear()}-${(
           "0" +

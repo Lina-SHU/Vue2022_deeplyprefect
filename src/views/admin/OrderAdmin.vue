@@ -33,7 +33,7 @@
                 <button
                   type="button"
                   class="btn btn-sm btn-outline-danger ms-1"
-                  @click="deleteOrder(order.id)"
+                  @click="deleteOrder(order)"
                 >
                   刪除
                 </button>
@@ -44,7 +44,7 @@
         <pagination
           class="mt-2"
           :pages="pages"
-          :get-orders="getOrders"
+          @get-current-page="getCurrentPage"
         ></pagination>
       </div>
     </div>
@@ -73,10 +73,15 @@ export default {
     return {
       orderList: [],
       pages: {},
-      tempOrder: {}
+      tempOrder: {},
+      currentPage: 1
     };
   },
   methods: {
+    getCurrentPage(page) {
+      this.currentPage = page;
+      this.getOrders(this.currentPage);
+    },
     getOrders(page = 1) {
       const url = `${VITE_URL}api/${VITE_PATH}/admin/orders?page=${page}`;
       this.$http
@@ -92,15 +97,15 @@ export default {
           });
         });
     },
-    deleteOrder(id) {
+    deleteOrder(order) {
       Swal.fire({
-        title: "確認是否刪除此訂單？",
+        title: `確認是否刪除 ${order.id} 訂單？`,
         showCancelButton: true,
         confirmButtonText: "刪除",
         cancelButtonText: "取消",
       }).then((result) => {
         if (result.isConfirmed) {
-          const url = `${VITE_URL}api/${VITE_PATH}/admin/order/${id}`;
+          const url = `${VITE_URL}api/${VITE_PATH}/admin/order/${order.id}`;
           this.$http
             .delete(url)
             .then(() => {

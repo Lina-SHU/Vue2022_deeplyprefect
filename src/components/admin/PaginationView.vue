@@ -5,7 +5,7 @@
         <a
           class="page-link"
           href="#"
-          @click.prevent="getProducts(pages.current_page - 1)"
+          @click.prevent="getPage(pages.current_page - 1)"
           >Previous</a
         >
       </li>
@@ -18,7 +18,7 @@
         <a
           class="page-link"
           href="#"
-          @click.prevent="getProducts(page)"
+          @click.prevent="getPage(page)"
           :class="{ 'point-none': page === pages.current_page }"
           >{{ page }}</a
         >
@@ -30,7 +30,7 @@
         <a
           class="page-link"
           href="#"
-          @click.prevent="getProducts(pages.current_page + 1)"
+          @click.prevent="getPage(pages.current_page + 1)"
           >Next</a
         >
       </li>
@@ -40,6 +40,13 @@
 
 <script>
 export default {
-  props: ["pages", "getProducts"],
+  props: ["pages"],
+  emit: ["getCurrentPage"],
+  methods: {
+    getPage(page) {
+      if (page === this.pages.current_page) return
+      this.$emit("getCurrentPage", page);
+    },
+  },
 };
 </script>

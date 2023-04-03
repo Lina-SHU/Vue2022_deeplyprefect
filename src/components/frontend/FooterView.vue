@@ -25,7 +25,7 @@
             </div>
             <div class="col-md-6 text-center">
               <div class="d-flex flex-column justify-content-center h-100">
-                <ul class="list-unstyled d-flex mx-auto mb-0">
+                <ul class="list-unstyled d-flex mx-auto">
                   <li>
                     <a href="javascript:;">
                       <img src="../../assets/img/ig.png" alt="IG" />

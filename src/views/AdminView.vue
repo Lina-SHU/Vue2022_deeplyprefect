@@ -2,12 +2,16 @@
   <header>
     <nav>
       後臺管理平台
-      <RouterLink to="/">home</RouterLink> |
-      <RouterLink to="/admin/products">products admin</RouterLink> |
-      <RouterLink to="/admin/orders">orders admin</RouterLink> |
-      <RouterLink to="/admin/coupon">coupon admin</RouterLink>
-      <button type="button" class="btn btn-primary ms-3" @click="logout">
-        Logout
+      <RouterLink to="/">回前台首頁</RouterLink> |
+      <RouterLink to="/admin/products">商品管理</RouterLink> |
+      <RouterLink to="/admin/orders">訂單管理</RouterLink> |
+      <RouterLink to="/admin/coupon">優惠券管理</RouterLink>
+      <button
+        type="button"
+        class="btn btn-outline-primary-dark ms-3"
+        @click="logout"
+      >
+        登出
       </button>
     </nav>
   </header>
@@ -55,6 +59,7 @@ export default {
             timer: 2000,
             showConfirmButton: false,
           });
+          document.cookie = `PToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT`;
           this.$router.push("/login");
         })
         .catch((err) => {

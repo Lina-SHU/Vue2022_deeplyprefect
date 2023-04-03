@@ -43,7 +43,7 @@
                 <button
                   type="button"
                   class="btn btn-sm btn-outline-danger ms-1"
-                  @click="deleteProduct(product.id)"
+                  @click="deleteProduct(product)"
                 >
                   刪除
                 </button>
@@ -54,7 +54,7 @@
         <pagination
           class="mt-2"
           :pages="pages"
-          :get-products="getProducts"
+          @get-current-page="getCurrentPage"
         ></pagination>
       </div>
     </div>
@@ -84,9 +84,14 @@ export default {
       productList: [],
       pages: {},
       tempProduct: {},
+      currentPage: 1
     };
   },
   methods: {
+    getCurrentPage(page) {
+      this.currentPage = page;
+      this.getProducts(this.currentPage);
+    },
     getProducts(page = 1) {
       const url = `${VITE_URL}api/${VITE_PATH}/admin/products?page=${page}`;
       this.$http
@@ -123,15 +128,15 @@ export default {
         this.tempProduct = { imagesUrl: [], tags: [] };
       }
     },
-    deleteProduct(id) {
+    deleteProduct(prd) {
       Swal.fire({
-        title: "確認是否刪除此商品？",
+        title: `是否刪除${prd.title}(刪除後將無法恢復)？`,
         showCancelButton: true,
         confirmButtonText: "刪除",
         cancelButtonText: "取消",
       }).then((result) => {
         if (result.isConfirmed) {
-          const url = `${VITE_URL}api/${VITE_PATH}/admin/product/${id}`;
+          const url = `${VITE_URL}api/${VITE_PATH}/admin/product/${prd.id}`;
           this.$http
             .delete(url)
             .then(() => {

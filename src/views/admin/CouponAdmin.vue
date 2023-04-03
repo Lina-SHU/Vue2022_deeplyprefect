@@ -54,7 +54,7 @@
         <pagination
           class="mt-2"
           :pages="pages"
-          :get-coupons="getCoupons"
+          @get-current-page="getCurrentPage"
         ></pagination>
       </div>
     </div>
@@ -84,9 +84,14 @@ export default {
       couponList: [],
       pages: {},
       tempCoupon: {},
+      currentPage: 1
     };
   },
   methods: {
+    getCurrentPage(page) {
+      this.currentPage = page;
+      this.getOrders(this.currentPage);
+    },
     getCoupons(page = 1) {
       const url = `${VITE_URL}api/${VITE_PATH}/admin/coupons?page=${page}`;
       this.$http
