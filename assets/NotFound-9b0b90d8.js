@@ -1,1 +1,0 @@
-import{_ as t,r as o,o as n,c as r,f as s,w as a,F as c,e as _,g as l}from"./index-b2a44858.js";const d={},u=_("p",null,"404",-1);function f(i,p){const e=o("router-link");return n(),r(c,null,[u,s(e,{to:"/productlist"},{default:a(()=>[l(" 逛街去 ")]),_:1})],64)}const x=t(d,[["render",f]]);export{x as default};
