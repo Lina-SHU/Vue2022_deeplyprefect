@@ -14,68 +14,101 @@
           ></button>
         </div>
         <div class="modal-body">
-          <div class="mb-3">
-            <label for="couponName" class="form-label">名稱</label>
-            <input
-              type="text"
-              class="form-control"
-              id="couponName"
-              v-model="temp.title"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="couponCode" class="form-label">代碼</label>
-            <input
-              type="text"
-              class="form-control"
-              id="couponCode"
-              v-model.trim="temp.code"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="couponDiscount" class="form-label">折扣數</label>
-            <input
-              type="number"
-              class="form-control"
-              id="couponDiscount"
-              v-model.number="temp.percent"
-              max="100"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="couponDiscount" class="form-label">到期日</label>
-            <input
-              type="date"
-              class="form-control"
-              id="couponDiscount"
-              v-model="date"
-            />
-          </div>
-          <div class="mb-3">
-            <div class="form-check">
-              <input
-                id="is_enabled"
-                class="form-check-input"
-                type="checkbox"
-                :true-value="1"
-                :false-value="0"
-                v-model="temp.is_enabled"
+          <VForm v-slot="{ errors }" @submit="editCoupon">
+            <div class="mb-3">
+              <label for="couponName" class="form-label">名稱</label>
+              <VField
+                type="text"
+                class="form-control"
+                id="couponName"
+                v-model="temp.title"
+                name="名稱"
+                rules="required"
+                :class="{ 'is-invalid': errors['名稱'] }"
               />
-              <label class="form-check-label" for="is_enabled">是否啟用</label>
+              <error-message
+                name="名稱"
+                class="invalid-feedback"
+              ></error-message>
             </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            取消
-          </button>
-          <button type="button" class="btn btn-primary" @click="editCoupon">
-            {{ temp.id ? "編輯" : "新增" }}
-          </button>
+            <div class="mb-3">
+              <label for="couponCode" class="form-label">代碼</label>
+              <VField
+                type="text"
+                class="form-control"
+                id="couponCode"
+                v-model.trim="temp.code"
+                name="代碼"
+                rules="required"
+                :class="{ 'is-invalid': errors['代碼'] }"
+              />
+              <error-message
+                name="代碼"
+                class="invalid-feedback"
+              ></error-message>
+            </div>
+            <div class="mb-3">
+              <label for="couponDiscount" class="form-label">折扣數</label>
+              <VField
+                type="number"
+                class="form-control"
+                id="couponDiscount"
+                v-model.number="temp.percent"
+                max="100"
+                name="折扣數"
+                rules="required"
+                :class="{ 'is-invalid': errors['折扣數'] }"
+              />
+              <error-message
+                name="折扣數"
+                class="invalid-feedback"
+              ></error-message>
+            </div>
+            <div class="mb-3">
+              <label for="couponDiscount" class="form-label">到期日</label>
+              <VField
+                type="date"
+                class="form-control"
+                id="couponDiscount"
+                v-model="date"
+                name="到期日"
+                rules="required"
+                :class="{ 'is-invalid': errors['到期日'] }"
+              />
+              <error-message
+                name="到期日"
+                class="invalid-feedback"
+              ></error-message>
+            </div>
+            <div class="mb-3">
+              <div class="form-check">
+                <VField
+                  id="is_enabled"
+                  class="form-check-input"
+                  type="checkbox"
+                  :true-value="1"
+                  :false-value="0"
+                  v-model="temp.is_enabled"
+                  name="是否啟用"
+                />
+                <label class="form-check-label" for="is_enabled"
+                  >是否啟用</label
+                >
+              </div>
+            </div>
+            <div class="text-end">
+              <button
+                type="button"
+                class="btn btn-outline-primary-dark"
+                data-bs-dismiss="modal"
+              >
+                取消
+              </button>
+              <button type="submit" class="btn btn-primary-dark ms-3">
+                {{ temp.id ? "編輯" : "新增" }}
+              </button>
+            </div>
+          </VForm>
         </div>
       </div>
     </div>
@@ -104,7 +137,6 @@ export default {
       this.editMsg.hide();
     },
     editCoupon() {
-      // 
       if (this.temp.percent > 100 || this.temp.percent < 0) {
         Swal.fire({
           title: "優惠券折扣需在 100 內！",
@@ -112,7 +144,7 @@ export default {
         });
         return;
       }
-      // 
+      //
       if (new Date(this.date) < new Date()) {
         Swal.fire({
           title: "到期日需大於今日",
