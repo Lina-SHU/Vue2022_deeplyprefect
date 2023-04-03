@@ -1,7 +1,7 @@
 <template>
-  <HeaderView></HeaderView>
+  <HeaderView />
   <RouterView />
-  <FooterView></FooterView>
+  <FooterView />
 </template>
 
 <script>

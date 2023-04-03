@@ -62,8 +62,8 @@
                       <p v-html="product.descList"></p>
                     </div>
                     <div>
-                      <p class="fs-4 text-end">
-                        <del class="text-danger fs-7 me-2"
+                      <p class="text-danger fs-3 text-end">
+                        <del class="text-muted fs-7 me-2"
                           >$ {{ $currency(product.origin_price) }}</del
                         >
                         $ {{ $currency(product.price) }}
@@ -117,7 +117,7 @@
               <h3 class="fs-4 text-center text-primary-dark fw-normal mb-5">
                 經典暢銷款
               </h3>
-              <HotProduct></HotProduct>
+              <HotProduct />
             </div>
           </div>
           <loading v-model:active="isLoading" />

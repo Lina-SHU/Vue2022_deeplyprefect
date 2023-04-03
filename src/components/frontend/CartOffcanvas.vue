@@ -37,7 +37,11 @@
                     @change="changeCartItem(cart)"
                     :disabled="isDisabled"
                   >
-                    <option :value="i" v-for="i in 20" :key="i">
+                    <option
+                      :value="i"
+                      v-for="i in cart.qty > 20 ? cart.qty : 20"
+                      :key="i"
+                    >
                       {{ i }}
                     </option>
                   </select>

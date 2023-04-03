@@ -19,7 +19,9 @@
         <div
           class="d-none d-lg-block bg-whiteBlock bg-white-opacity position-absolute end-0 bottom-0"
         ></div>
-        <div class="container bg-white position-relative z-index-3 py-5">
+        <div
+          class="container bg-white position-relative z-index-3 py-5 py-lg-8"
+        >
           <div class="row">
             <div class="col-md-3">
               <!-- MB -->

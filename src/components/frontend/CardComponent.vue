@@ -1,12 +1,15 @@
 <template>
-  <div class="card text-dark border-0 rounded-0">
+  <router-link
+    :to="{ path: `/product/${prd.id}`}"
+    class="card text-dark border-0 rounded-0"
+  >
     <div class="card-image position-relative">
       <div
         class="card-content position-absolute z-index-3 d-flex justify-content-center align-items-center"
       >
         <div class="text-center">
           <router-link
-            :to="{ path: `/product/${prd.id}` }"
+            :to="{ path: `/product/${prd.id}`}"
             type="button"
             class="btn btn-outline-primary d-block mb-3"
           >
@@ -15,7 +18,7 @@
           <button
             type="button"
             class="btn btn-primary d-block"
-            @click="addToCart(prd.id)"
+            @click.prevent="addToCart(prd.id)"
             :disabled="isDisabled"
           >
             加入購物車
@@ -26,7 +29,7 @@
         <img
           :src="prd.imageUrl"
           class="img-fluid object-cover"
-          alt="prd.title"
+          :alt="prd.title"
         />
       </div>
     </div>
@@ -34,7 +37,7 @@
       <h5 class="fs-6 card-title">{{ prd.title }}</h5>
       <p class="card-text">${{ $currency(prd.price) }}</p>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>

@@ -101,7 +101,12 @@
                 </h2>
                 <VForm v-slot="{ errors }" @submit="onSubmit">
                   <div class="mb-3">
-                    <label for="email">姓名</label>
+                    <div class="text-end">
+                      <span class="text-danger">*</span>為必填
+                    </div>
+                    <label for="email">
+                      姓名<span class="text-danger">*</span>
+                    </label>
                     <VField
                       id="name"
                       name="姓名"
@@ -118,7 +123,9 @@
                     ></error-message>
                   </div>
                   <div class="mb-3">
-                    <label for="email">Email</label>
+                    <label for="email">
+                      Email<span class="text-danger">*</span>
+                    </label>
                     <VField
                       id="email"
                       name="email"
@@ -135,7 +142,9 @@
                     ></error-message>
                   </div>
                   <div class="mb-3">
-                    <label for="email">電話</label>
+                    <label for="email">
+                      電話<span class="text-danger">*</span>
+                    </label>
                     <VField
                       id="tel"
                       name="電話"
@@ -152,7 +161,9 @@
                     ></error-message>
                   </div>
                   <div class="mb-3">
-                    <label for="address">地址</label>
+                    <label for="address">
+                      地址<span class="text-danger">*</span>
+                    </label>
                     <VField
                       id="address"
                       name="地址"
@@ -243,7 +254,7 @@ export default {
       resetForm();
       this.message = "";
       this.getCart();
-      this.$router.push(`/orderCompleted/${order.order.orderId}`);
+      this.$router.push(`/orderConfirm/${order.order.orderId}`);
     },
   },
   computed: {

@@ -28,14 +28,17 @@ export const CartStore = defineStore("CartStore", {
 
         loading.toggleDisabled();
         this.getCart();
-        Swal.fire({
-          toast: true,
-          title: "已將商品加入到購物車！",
-          icon: "success",
-          timer: 2000,
-          position: "top-end",
-          showConfirmButton: false,
-        });
+        if (id !== "-NQjv0kHAdgP4A0b1Hag") {
+          // 試用包不跳出加入購物車視窗
+          Swal.fire({
+            toast: true,
+            title: "已將商品加入到購物車！",
+            icon: "success",
+            timer: 2000,
+            position: "top-end",
+            showConfirmButton: false,
+          });
+        }
       } catch (err) {
         Swal.fire({
           title: err.response.data.message,

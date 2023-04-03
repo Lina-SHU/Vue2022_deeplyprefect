@@ -15,30 +15,30 @@
           </div>
         </div>
       </div>
-      <div class="container bg-white py-5">
+      <div class="container bg-white py-5 py-lg-7">
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <!-- 結帳流程 -->
             <ul
-              class="cartlist list-unstyled d-flex justify-content-between mx-auto w-75 mb-7"
+              class="cartlist list-unstyled d-flex justify-content-between mx-auto w-75 mb-5 mb-lg-7"
             >
               <li
-                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-white fs-5 bg-primary-dark mb-0"
+                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-white bg-primary-dark mb-0"
               >
                 1
               </li>
               <li
-                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-primary-dark fs-5 bg-primary mb-0"
+                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-primary-dark bg-primary mb-0"
               >
                 2
               </li>
               <li
-                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-primary-dark fs-5 bg-primary mb-0"
+                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-primary-dark bg-primary mb-0"
               >
                 3
               </li>
               <li
-                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-primary-dark fs-5 bg-primary mb-0"
+                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-primary-dark bg-primary mb-0"
               >
                 4
               </li>
@@ -91,7 +91,11 @@
                         @change="changeCartItem(cart)"
                         :disabled="isDisabled"
                       >
-                        <option :value="i" v-for="i in 20" :key="i">
+                        <option
+                          :value="i"
+                          v-for="i in cart.qty > 20 ? cart.qty : 20"
+                          :key="i"
+                        >
                           {{ i }}
                         </option>
                       </select>
@@ -106,6 +110,13 @@
                   </td>
                 </tr>
               </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="5" class="text-end py-3">
+                    總金額： $ {{ $currency(carts.final_total) }} 元
+                  </td>
+                </tr>
+              </tfoot>
             </table>
             <div
               v-if="carts.carts?.length"
@@ -116,12 +127,9 @@
                 class="btn btn-outline-primary-dark"
                 >繼續購物</router-link
               >
-              <div>
-                總金額： $ {{ $currency(carts.final_total) }} 元
-                <router-link to="/checkInfo" class="btn btn-primary-dark ms-2"
-                  >前往結帳</router-link
-                >
-              </div>
+              <router-link to="/checkInfo" class="btn btn-primary-dark ms-2"
+                >前往結帳</router-link
+              >
             </div>
           </div>
         </div>

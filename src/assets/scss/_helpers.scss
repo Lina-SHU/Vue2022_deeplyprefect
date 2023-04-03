@@ -30,8 +30,12 @@ a {
 }
 
 .circle{
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
+  @media (min-width: 576px) {
+    width: 64px;
+    height: 64px;
+  }
   @media (min-width: 992px) {
     width: 80px;
     height: 80px;
@@ -45,7 +49,10 @@ a {
     bottom: -50%;
     color: $primary-dark;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 12px;
+    @media (min-width: 576px) {
+      font-size: 16px;
+    }
     @media (min-width: 992px) {
       font-size: 20px;
     }

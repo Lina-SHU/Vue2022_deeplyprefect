@@ -28,7 +28,7 @@
         </h2>
         <div class="row justify-content-center">
           <div class="col-lg-10 bg-white py-2">
-            <HotProduct></HotProduct>
+            <HotProduct />
           </div>
         </div>
       </div>

@@ -6,14 +6,16 @@
           <div class="row justify-content-center">
             <div class="col-10 col-md-6 mb-6 mb-md-0">
               <h3 class="fs-6 mb-3">聯絡我們</h3>
-              <ul class="list-unstyled mb-3">
+              <ul class="list-unstyled mb-3 mb-md-0">
                 <li class="mb-2 d-flex">
                   <p class="w-25 mb-0">電話</p>
-                  <p class="mb-0">02-218 8965</p>
+                  <a href="tel:022188965">02-218 8965</a>
                 </li>
                 <li class="mb-2 d-flex">
                   <p class="w-25 mb-0">E-mail</p>
-                  <p class="mb-0">deeplyPrefect@gmail.com</p>
+                  <a href="mailto:deeplyPrefect@gmail.com"
+                    >deeplyPrefect@gmail.com</a
+                  >
                 </li>
                 <li class="d-flex">
                   <p class="w-25 mb-0">服務時間</p>
@@ -23,7 +25,7 @@
             </div>
             <div class="col-md-6 text-center">
               <div class="d-flex flex-column justify-content-center h-100">
-                <ul class="list-unstyled d-flex mx-auto">
+                <ul class="list-unstyled d-flex mx-auto mb-0">
                   <li>
                     <a href="javascript:;">
                       <img src="../../assets/img/ig.png" alt="IG" />

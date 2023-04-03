@@ -15,30 +15,30 @@
           </div>
         </div>
       </div>
-      <div class="container bg-white py-5">
+      <div class="container bg-white py-5 py-lg-7">
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <!-- 結帳流程 -->
             <ul
-              class="cartlist list-unstyled d-flex justify-content-between mx-auto w-75 mb-7"
+              class="cartlist list-unstyled d-flex justify-content-between mx-auto w-75 mb-5 mb-lg-7"
             >
               <li
-                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-primary-dark fs-5 bg-primary mb-0"
+                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-primary-dark bg-primary mb-0"
               >
                 1
               </li>
               <li
-                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-white fs-5 bg-primary-dark mb-0"
+                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-white bg-primary-dark mb-0"
               >
                 2
               </li>
               <li
-                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-primary-dark fs-5 bg-primary mb-0"
+                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-primary-dark bg-primary mb-0"
               >
                 3
               </li>
               <li
-                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-primary-dark fs-5 bg-primary mb-0"
+                class="position-relative border-2 border-primary-dark rounded-circle circle d-flex justify-content-center align-items-center text-primary-dark bg-primary mb-0"
               >
                 4
               </li>
@@ -92,15 +92,27 @@
                 使用折價券
               </button>
             </div>
+            <div
+              v-if="carts.total !== carts.final_total"
+              class="d-flex justify-content-between px-2"
+            >
+              <p>折價券折扣：</p>
+              <p>{{ $currency(carts.total - carts.final_total) }}</p>
+            </div>
             <div class="d-flex justify-content-between px-2">
               <p>總計：</p>
               <p>{{ $currency(carts.final_total) }}</p>
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 mt-5 mt-lg-0">
             <VForm v-slot="{ errors }" @submit="onSubmit">
               <div class="mb-3">
-                <label for="email">姓名</label>
+                <div class="text-end">
+                  <span class="text-danger">*</span>為必填
+                </div>
+                <label for="email">
+                  姓名<span class="text-danger">*</span>
+                </label>
                 <VField
                   id="name"
                   name="姓名"
@@ -117,7 +129,9 @@
                 ></error-message>
               </div>
               <div class="mb-3">
-                <label for="email">Email</label>
+                <label for="email">
+                  Email<span class="text-danger">*</span>
+                </label>
                 <VField
                   id="email"
                   name="email"
@@ -134,7 +148,9 @@
                 ></error-message>
               </div>
               <div class="mb-3">
-                <label for="email">電話</label>
+                <label for="email">
+                  電話<span class="text-danger">*</span>
+                </label>
                 <VField
                   id="tel"
                   name="電話"
@@ -151,7 +167,9 @@
                 ></error-message>
               </div>
               <div class="mb-3">
-                <label for="address">地址</label>
+                <label for="address">
+                  地址<span class="text-danger">*</span>
+                </label>
                 <VField
                   id="address"
                   name="地址"
@@ -263,7 +281,7 @@ export default {
   },
   computed: {
     ...mapState(CartStore, ["carts"]),
-    ...mapState(LoadingStore, ["isLoading"])
+    ...mapState(LoadingStore, ["isLoading"]),
   },
 };
 </script>
