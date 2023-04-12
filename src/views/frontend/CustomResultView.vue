@@ -45,7 +45,7 @@
         </div>
       </div>
     </section>
-    <loading v-model:active="isLoading" />
+    <Loading v-model:active="isLoading" />
   </main>
 </template>
 
@@ -55,7 +55,7 @@ import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/css/index.css";
 import { mapActions, mapState } from "pinia";
 import { LoadingStore } from "@/stores/LoadingStore.js";
-import CardComponent from "../../components/frontend/CardComponent.vue";
+import CardComponent from "@/components/frontend/CardComponent.vue";
 
 export default {
   components: {

@@ -137,12 +137,19 @@ export default {
       this.editMsg.hide();
     },
     editCoupon() {
-      if (this.temp.percent > 100 || this.temp.percent < 0) {
+      if (this.temp.percent > 100) {
         Swal.fire({
-          title: "優惠券折扣需在 100 內！",
+          title: "優惠券折扣不得大於 100 ！",
           icon: "warning",
         });
         return;
+      }
+      if (this.temp.percent < 0) {
+        Swal.fire({
+          title: "優惠券折扣不得小於 0 ！",
+          icon: "warning",
+        });
+        return
       }
       //
       if (new Date(this.date) < new Date()) {

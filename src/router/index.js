@@ -3,11 +3,11 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    name: "/",
+    name: "frontend",
     component: () => import("../views/FrontendView.vue"),
     children: [
       {
-        path: "/",
+        path: "",
         component: () => import("../views/frontend/HomeView.vue"),
       },
       {
@@ -58,7 +58,7 @@ const routes = [
     component: () => import("../views/AdminView.vue"),
     children: [
       {
-        path: "products",
+        path: "",
         component: () => import("../views/admin/ProductsAdmin.vue"),
       },
       {

@@ -24,10 +24,10 @@
               <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                    <router-link to="/">DeeplyPrefect</router-link>
+                    <routerLink to="/">DeeplyPrefect</routerLink>
                   </li>
                   <li class="breadcrumb-item">
-                    <router-link to="/productlist">保養去</router-link>
+                    <routerLink to="/productlist">保養去</routerLink>
                   </li>
                   <li class="breadcrumb-item">
                     {{ product.title }}
@@ -120,7 +120,7 @@
               <HotProduct />
             </div>
           </div>
-          <loading v-model:active="isLoading" />
+          <Loading v-model:active="isLoading" />
         </div>
       </div>
     </section>
@@ -134,8 +134,8 @@ import Swal from "sweetalert2";
 import { mapState, mapActions } from "pinia";
 import { CartStore } from "@/stores/CartStore.js";
 import { LoadingStore } from "@/stores/LoadingStore.js";
-import HotProduct from "../../components/frontend/HotProduct.vue";
-import productSrv from "../../service/product-service.js";
+import HotProduct from "@/components/frontend/HotProduct.vue";
+import productSrv from "@/service/product-service.js";
 
 export default {
   components: {

@@ -63,7 +63,7 @@ export default {
           document.cookie = `PToken=${res.data.token}; expires=${new Date(
             res.data.expired
           )}; path=/`;
-          this.$router.push("/admin/products");
+          this.$router.push("/admin");
         })
         .catch((err) => {
           Swal.fire({

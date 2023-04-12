@@ -81,9 +81,9 @@
                         class="img-fluid object-cover"
                       />
                     </div>
-                    <router-link :to="`/product/${order.product.id}`">
+                    <routerLink :to="`/product/${order.product.id}`">
                       {{ order.product.title }}
-                    </router-link>
+                    </routerLink>
                   </td>
                   <td class="text-end">
                     {{ $currency(order.product.price) }}
@@ -138,22 +138,22 @@
                 </tr>
               </tbody>
             </table>
-            <router-link
+            <routerLink
               to="/productlist"
               class="btn btn-primary-dark d-block w-100 mb-2"
             >
               繼續逛逛
-            </router-link>
-            <router-link
+            </routerLink>
+            <routerLink
               to="/"
               class="btn btn-outline-primary-dark d-block w-100"
             >
               回首頁
-            </router-link>
+            </routerLink>
           </div>
         </div>
       </div>
-      <loading v-model:active="isLoading" />
+      <Loading v-model:active="isLoading" />
     </section>
   </main>
 </template>

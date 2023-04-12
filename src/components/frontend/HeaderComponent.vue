@@ -4,9 +4,9 @@
   >
     <div class="container-fluid">
       <h1 class="mb-0">
-        <router-link to="/" class="navbar-brand" href="#"
+        <routerLink to="/" class="navbar-brand" href="#"
           >DeeplyPrefect
-        </router-link>
+        </routerLink>
       </h1>
       <div class="ms-auto">
         <button
@@ -27,30 +27,30 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link
+              <routerLink
                 to="/productlist"
                 class="nav-link py-3 py-lg-0 px-4"
                 @click.prevent="this.$refs.navbar.classList.remove('show')"
               >
                 保養去
-              </router-link>
+              </routerLink>
             </li>
             <li class="nav-item">
-              <router-link
+              <routerLink
                 to="/custom"
                 class="nav-link py-3 py-lg-0 px-4"
                 @click.prevent="this.$refs.navbar.classList.remove('show')"
-                >客製保養</router-link
+                >客製保養</routerLink
               >
             </li>
             <li class="nav-item">
-              <router-link
+              <routerLink
                 to="/trials"
                 class="nav-link py-3 py-lg-0 px-4"
                 @click.prevent="this.$refs.navbar.classList.remove('show')"
               >
                 立即體驗
-              </router-link>
+              </routerLink>
             </li>
             <!-- <li class="nav-item">
               <a

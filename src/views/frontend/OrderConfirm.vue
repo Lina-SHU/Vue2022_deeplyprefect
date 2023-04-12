@@ -74,9 +74,9 @@
                         class="img-fluid object-cover"
                       />
                     </div>
-                    <router-link :to="`/product/${order.product.id}`">
+                    <routerLink :to="`/product/${order.product.id}`">
                       {{ $currency(order.product.title) }}
-                    </router-link>
+                    </routerLink>
                   </td>
                   <td class="text-end">
                     {{ $currency(order.product.price) }}
@@ -141,7 +141,7 @@
           </div>
         </div>
       </div>
-      <loading v-model:active="isLoading" />
+      <Loading v-model:active="isLoading" />
     </section>
   </main>
 </template>

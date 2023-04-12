@@ -1,5 +1,5 @@
 <template>
-  <router-link
+  <routerLink
     :to="{ path: `/product/${prd.id}`}"
     class="card text-dark border-0 rounded-0"
   >
@@ -8,13 +8,13 @@
         class="card-content position-absolute z-index-3 d-flex justify-content-center align-items-center"
       >
         <div class="text-center">
-          <router-link
+          <routerLink
             :to="{ path: `/product/${prd.id}`}"
             type="button"
             class="btn btn-outline-primary d-block mb-3"
           >
             查看商品
-          </router-link>
+          </routerLink>
           <button
             type="button"
             class="btn btn-primary d-block"
@@ -37,7 +37,7 @@
       <h5 class="fs-6 card-title">{{ prd.title }}</h5>
       <p class="card-text">${{ $currency(prd.price) }}</p>
     </div>
-  </router-link>
+  </routerLink>
 </template>
 
 <script>

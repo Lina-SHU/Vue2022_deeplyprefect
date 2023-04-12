@@ -198,14 +198,14 @@
           </div>
         </div>
       </div>
-      <loading v-model:active="isLoading" />
+      <Loading v-model:active="isLoading" />
     </section>
   </main>
 </template>
 
 <script>
 import OrderSrv from "@/service/order-service.js";
-import productSrv from "../../service/product-service.js";
+import productSrv from "@/service/product-service.js";
 import { mapActions, mapState } from "pinia";
 import { CartStore } from "@/stores/CartStore.js";
 import { LoadingStore } from "@/stores/LoadingStore.js";

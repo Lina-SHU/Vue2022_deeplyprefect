@@ -67,10 +67,10 @@
                     role="tabpanel"
                     aria-labelledby="nav-home-tab"
                   >
-                    <router-link
+                    <routerLink
                       to="/productlist"
                       class="btn btn-primary-dark mt-1"
-                      >全部商品</router-link
+                      >全部商品</routerLink
                     >
                   </div>
                   <div
@@ -79,20 +79,20 @@
                     role="tabpanel"
                     aria-labelledby="nav-type-tab"
                   >
-                    <router-link
+                    <routerLink
                       to="/productlist?category=淡斑亮白系列"
                       class="btn btn-primary-dark me-2 mt-1"
-                      >淡斑亮白系列</router-link
+                      >淡斑亮白系列</routerLink
                     >
-                    <router-link
+                    <routerLink
                       to="/productlist?category=深層保濕系列"
                       class="btn btn-primary-dark me-2 mt-1"
-                      >深層保濕系列</router-link
+                      >深層保濕系列</routerLink
                     >
-                    <router-link
+                    <routerLink
                       to="/productlist?category=頂級呵護系列"
                       class="btn btn-primary-dark mt-1"
-                      >頂級呵護系列</router-link
+                      >頂級呵護系列</routerLink
                     >
                   </div>
                   <div
@@ -101,25 +101,25 @@
                     role="tabpanel"
                     aria-labelledby="nav-contact-tab"
                   >
-                    <router-link
+                    <routerLink
                       to="/productlist?category=精華水"
                       class="btn btn-primary-dark me-2 mt-1"
-                      >精華水</router-link
+                      >精華水</routerLink
                     >
-                    <router-link
+                    <routerLink
                       to="/productlist?category=精華液"
                       class="btn btn-primary-dark me-2 mt-1"
-                      >精華液</router-link
+                      >精華液</routerLink
                     >
-                    <router-link
+                    <routerLink
                       to="/productlist?category=精華霜"
                       class="btn btn-primary-dark me-2 mt-1"
-                      >精華霜</router-link
+                      >精華霜</routerLink
                     >
-                    <router-link
+                    <routerLink
                       to="/productlist?category=洗顏乳"
                       class="btn btn-primary-dark mt-1"
-                      >洗顏乳</router-link
+                      >洗顏乳</routerLink
                     >
                   </div>
                 </div>
@@ -132,49 +132,49 @@
                   <h3 class="fs-5 border-bottom text-primary-dark pb-1 mb-3">
                     全部商品
                   </h3>
-                  <router-link to="/productlist">全部商品</router-link>
+                  <routerLink to="/productlist">全部商品</routerLink>
                 </li>
                 <li class="mb-45">
                   <h3 class="fs-5 border-bottom text-primary-dark pb-1 mb-3">
                     系列商品
                   </h3>
-                  <router-link
+                  <routerLink
                     to="/productlist?category=淡斑亮白系列"
                     class="d-block mb-3"
-                    >淡斑亮白系列</router-link
+                    >淡斑亮白系列</routerLink
                   >
-                  <router-link
+                  <routerLink
                     to="/productlist?category=深層保濕系列"
                     class="d-block mb-3"
-                    >深層保濕系列</router-link
+                    >深層保濕系列</routerLink
                   >
-                  <router-link
+                  <routerLink
                     to="/productlist?category=頂級呵護系列"
                     class="d-block"
-                    >頂級呵護系列</router-link
+                    >頂級呵護系列</routerLink
                   >
                 </li>
                 <li class="mb-4">
                   <h3 class="fs-5 border-bottom text-primary-dark pb-1 mb-3">
                     商品分類
                   </h3>
-                  <router-link
+                  <routerLink
                     to="/productlist?category=精華水"
                     class="d-block mb-3"
-                    >精華水</router-link
+                    >精華水</routerLink
                   >
-                  <router-link
+                  <routerLink
                     to="/productlist?category=精華液"
                     class="d-block mb-3"
-                    >精華液</router-link
+                    >精華液</routerLink
                   >
-                  <router-link
+                  <routerLink
                     to="/productlist?category=精華霜"
                     class="d-block mb-3"
-                    >精華霜</router-link
+                    >精華霜</routerLink
                   >
-                  <router-link to="/productlist?category=洗顏乳" class="d-block"
-                    >洗顏乳</router-link
+                  <routerLink to="/productlist?category=洗顏乳" class="d-block"
+                    >洗顏乳</routerLink
                   >
                 </li>
               </ul>
@@ -193,7 +193,7 @@
             </div>
           </div>
 
-          <loading v-model:active="isLoading" />
+          <Loading v-model:active="isLoading" />
         </div>
       </div>
     </section>
@@ -206,8 +206,8 @@ import "vue-loading-overlay/dist/css/index.css";
 import Swal from "sweetalert2";
 import { LoadingStore } from "@/stores/LoadingStore.js";
 import { mapState, mapActions } from "pinia";
-import productSrv from "../../service/product-service.js";
-import CardComponent from "../../components/frontend/CardComponent.vue";
+import productSrv from "@/service/product-service.js";
+import CardComponent from "@/components/frontend/CardComponent.vue";
 
 export default {
   components: {

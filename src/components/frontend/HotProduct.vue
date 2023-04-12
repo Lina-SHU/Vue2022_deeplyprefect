@@ -23,8 +23,8 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import Swal from "sweetalert2";
-import productSrv from "../../service/product-service.js";
-import CardComponent from "../../components/frontend/CardComponent.vue";
+import productSrv from "@/service/product-service.js";
+import CardComponent from "@/components/frontend/CardComponent.vue";
 
 export default {
   components: {

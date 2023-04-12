@@ -20,9 +20,7 @@
               <RouterLink class="nav-link active" to="/">回前台首頁</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink to="/admin/products" class="nav-link"
-                >商品管理</RouterLink
-              >
+              <RouterLink to="/admin" class="nav-link">商品管理</RouterLink>
             </li>
             <li class="nav-item">
               <RouterLink to="/admin/orders" class="nav-link"
@@ -33,6 +31,9 @@
               <RouterLink to="/admin/coupon" class="nav-link"
                 >優惠券管理</RouterLink
               >
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary ms-2" @click="logout">登出</button>
             </li>
           </ul>
         </div>
