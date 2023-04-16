@@ -1,12 +1,12 @@
 <template>
-  <footer class="bg-primary">
+  <footer class="bg-primary text-primary-dark">
     <div class="container py-45">
       <div class="row justify-content-center">
         <div class="col-md-8">
           <div class="row justify-content-center">
             <div class="col-10 col-md-6 mb-6 mb-md-0">
               <h3 class="fs-6 mb-3">聯絡我們</h3>
-              <ul class="list-unstyled mb-3 mb-md-0">
+              <ul class="footerList list-unstyled mb-3 mb-md-0">
                 <li class="mb-2 d-flex">
                   <p class="w-25 mb-0">電話</p>
                   <a href="tel:022188965">02-218 8965</a>
@@ -51,3 +51,14 @@
     </div>
   </footer>
 </template>
+
+<style lang="scss" scoped>
+.footerList{
+  a{
+    &:hover{
+      text-decoration: underline;
+      color: #406563;
+    }
+  }
+}
+</style>

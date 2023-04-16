@@ -29,7 +29,7 @@
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button
-                      class="nav-link active"
+                      class="nav-link active text-primary-dark"
                       id="nav-home-tab"
                       data-bs-toggle="tab"
                       data-bs-target="#nav-home"
@@ -39,7 +39,7 @@
                       全部商品
                     </button>
                     <button
-                      class="nav-link"
+                      class="nav-link text-primary-dark"
                       id="nav-type-tab"
                       data-bs-toggle="tab"
                       data-bs-target="#nav-type"
@@ -49,7 +49,7 @@
                       系列商品
                     </button>
                     <button
-                      class="nav-link"
+                      class="nav-link text-primary-dark"
                       id="nav-contact-tab"
                       data-bs-toggle="tab"
                       data-bs-target="#nav-contact"
@@ -69,7 +69,7 @@
                   >
                     <routerLink
                       to="/productlist"
-                      class="btn btn-primary-dark mt-1"
+                      class="btn btn-outline-primary-dark mt-1"
                       >全部商品</routerLink
                     >
                   </div>
@@ -81,17 +81,17 @@
                   >
                     <routerLink
                       to="/productlist?category=淡斑亮白系列"
-                      class="btn btn-primary-dark me-2 mt-1"
+                      class="btn btn-outline-primary-dark me-2 mt-1"
                       >淡斑亮白系列</routerLink
                     >
                     <routerLink
                       to="/productlist?category=深層保濕系列"
-                      class="btn btn-primary-dark me-2 mt-1"
+                      class="btn btn-outline-primary-dark me-2 mt-1"
                       >深層保濕系列</routerLink
                     >
                     <routerLink
                       to="/productlist?category=頂級呵護系列"
-                      class="btn btn-primary-dark mt-1"
+                      class="btn btn-outline-primary-dark mt-1"
                       >頂級呵護系列</routerLink
                     >
                   </div>
@@ -103,22 +103,22 @@
                   >
                     <routerLink
                       to="/productlist?category=精華水"
-                      class="btn btn-primary-dark me-2 mt-1"
+                      class="btn btn-outline-primary-dark me-2 mt-1"
                       >精華水</routerLink
                     >
                     <routerLink
                       to="/productlist?category=精華液"
-                      class="btn btn-primary-dark me-2 mt-1"
+                      class="btn btn-outline-primary-dark me-2 mt-1"
                       >精華液</routerLink
                     >
                     <routerLink
                       to="/productlist?category=精華霜"
-                      class="btn btn-primary-dark me-2 mt-1"
+                      class="btn btn-outline-primary-dark me-2 mt-1"
                       >精華霜</routerLink
                     >
                     <routerLink
                       to="/productlist?category=洗顏乳"
-                      class="btn btn-primary-dark mt-1"
+                      class="btn btn-outline-primary-dark mt-1"
                       >洗顏乳</routerLink
                     >
                   </div>
@@ -129,59 +129,113 @@
                 class="d-none d-lg-block list-unstyled position-sticky top-0 left-0 w-75"
               >
                 <li class="mb-45">
-                  <h3 class="fs-5 border-bottom text-primary-dark pb-1 mb-3">
+                  <h3
+                    class="fs-5 border-bottom text-primary-dark fw-medium pb-1 mb-3"
+                  >
                     全部商品
                   </h3>
-                  <routerLink to="/productlist">全部商品</routerLink>
+                  <routerLink
+                    to="/productlist"
+                    class="category-btn d-inline-block py-1 px-2"
+                    :class="{ 'category-active': productTitle === '全部商品' }"
+                    >全部商品</routerLink
+                  >
                 </li>
                 <li class="mb-45">
-                  <h3 class="fs-5 border-bottom text-primary-dark pb-1 mb-3">
+                  <h3
+                    class="fs-5 border-bottom text-primary-dark fw-medium pb-1 mb-3"
+                  >
                     系列商品
                   </h3>
-                  <routerLink
-                    to="/productlist?category=淡斑亮白系列"
-                    class="d-block mb-3"
-                    >淡斑亮白系列</routerLink
-                  >
-                  <routerLink
-                    to="/productlist?category=深層保濕系列"
-                    class="d-block mb-3"
-                    >深層保濕系列</routerLink
-                  >
-                  <routerLink
-                    to="/productlist?category=頂級呵護系列"
-                    class="d-block"
-                    >頂級呵護系列</routerLink
-                  >
+                  <ul class="list-unstyled">
+                    <li>
+                      <routerLink
+                        to="/productlist?category=淡斑亮白系列"
+                        class="category-btn d-inline-block py-1 px-2 mb-3"
+                        :class="{
+                          'category-active': productTitle === '淡斑亮白系列',
+                        }"
+                        >淡斑亮白系列</routerLink
+                      >
+                    </li>
+                    <li>
+                      <routerLink
+                        to="/productlist?category=深層保濕系列"
+                        class="category-btn d-inline-block py-1 px-2 mb-3"
+                        :class="{
+                          'category-active': productTitle === '深層保濕系列',
+                        }"
+                        >深層保濕系列</routerLink
+                      >
+                    </li>
+                    <li>
+                      <routerLink
+                        to="/productlist?category=頂級呵護系列"
+                        class="category-btn d-inline-block py-1 px-2"
+                        :class="{
+                          'category-active': productTitle === '頂級呵護系列',
+                        }"
+                        >頂級呵護系列</routerLink
+                      >
+                    </li>
+                  </ul>
                 </li>
                 <li class="mb-4">
-                  <h3 class="fs-5 border-bottom text-primary-dark pb-1 mb-3">
+                  <h3
+                    class="fs-5 border-bottom text-primary-dark fw-medium pb-1 mb-3"
+                  >
                     商品分類
                   </h3>
-                  <routerLink
-                    to="/productlist?category=精華水"
-                    class="d-block mb-3"
-                    >精華水</routerLink
-                  >
-                  <routerLink
-                    to="/productlist?category=精華液"
-                    class="d-block mb-3"
-                    >精華液</routerLink
-                  >
-                  <routerLink
-                    to="/productlist?category=精華霜"
-                    class="d-block mb-3"
-                    >精華霜</routerLink
-                  >
-                  <routerLink to="/productlist?category=洗顏乳" class="d-block"
-                    >洗顏乳</routerLink
-                  >
+                  <ul class="list-unstyled mb">
+                    <li>
+                      <routerLink
+                        to="/productlist?category=精華水"
+                        class="category-btn d-inline-block py-1 px-2 mb-3 catgory-active"
+                        :class="{
+                          'category-active': productTitle === '精華水',
+                        }"
+                        >精華水</routerLink
+                      >
+                    </li>
+                    <li>
+                      <routerLink
+                        to="/productlist?category=精華液"
+                        class="category-btn d-inline-block py-1 px-2 mb-3"
+                        :class="{
+                          'category-active': productTitle === '精華液',
+                        }"
+                        >精華液</routerLink
+                      >
+                    </li>
+                    <li>
+                      <routerLink
+                        to="/productlist?category=精華霜"
+                        class="category-btn d-inline-block py-1 px-2 mb-3"
+                        :class="{
+                          'category-active': productTitle === '精華霜',
+                        }"
+                        >精華霜</routerLink
+                      >
+                    </li>
+                    <li>
+                      <routerLink
+                        to="/productlist?category=洗顏乳"
+                        class="category-btn d-inline-block py-1 px-2"
+                        :class="{
+                          'category-active': productTitle === '洗顏乳',
+                        }"
+                        >洗顏乳</routerLink
+                      >
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
             <div class="col-md-9">
               <div class="row gy-4">
-                <h3 class="fs-5 text-primary-dark mb-3">{{ productTitle }}</h3>
+                <h3 class="fw-medium fs-5 text-primary-dark mb-3">
+                  {{ productTitle }}
+                </h3>
                 <div
                   class="col-6 col-md-4 col-lg-3"
                   v-for="prd in productList"

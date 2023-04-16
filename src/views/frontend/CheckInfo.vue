@@ -110,7 +110,7 @@
                 <div class="text-end">
                   <span class="text-danger">*</span>為必填
                 </div>
-                <label for="email">
+                <label for="name">
                   姓名<span class="text-danger">*</span>
                 </label>
                 <VField
@@ -148,7 +148,7 @@
                 ></error-message>
               </div>
               <div class="mb-3">
-                <label for="email">
+                <label for="tel">
                   電話<span class="text-danger">*</span>
                 </label>
                 <VField

@@ -10,6 +10,36 @@ a {
   object-fit: cover;
 }
 
+.bg-shadow {
+  box-shadow: 0 0 10px rgba($gray-600, .4);
+}
+
+.fw-medium {
+  font-weight: 600;
+}
+
+.w-lg-35 {
+  width: 100%;
+
+  @media (min-width: 992px) {
+    width: 35%;
+  }
+}
+
+.w-lg-50 {
+  width: 100%;
+  @media (min-width: 992px) {
+    width: 50%;
+  }
+}
+
+.w-lg-65 {
+  width: 100%;
+  @media (min-width: 992px) {
+    width: 65%;
+  }
+}
+
 .z-index-5 {
   z-index: 5;
 }
@@ -24,9 +54,24 @@ a {
   background-repeat: no-repeat;
 }
 
+.bg-secondary-light {
+  background-color: rgba($secondary, .5);
+}
+
 .bg-prds{
   max-width: 1536px;
   margin: 0 auto;
+}
+
+.category-btn{
+  &:hover{
+    background: rgba($primary, .6);
+    color: $primary-dark;
+  }
+}
+
+.category-active {
+  background: rgba($primary, .6);
 }
 
 .circle{
@@ -78,22 +123,15 @@ a {
   padding: 2px 8px;
 }
 
-.shadowLeft-trial{
-  width: 90%;
-  height: 60%;
-  top: 8%;
-  left: 0px;
-  z-index: 1;
-}
-
-.shadowRight-trial {
-  width: 90%;
-  height: 60%;
-  top: 8%;
-  right: 0px;
-  z-index: 1;
-}
-
 .point-none{
   cursor: none;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link{
+  background-color: $primary;
+}
+
+.nav-item-active {
+  border-bottom: 1px solid $primary-dark;
 }

@@ -12,7 +12,7 @@
         class="banner-cta bg-white-opacity position-absolute d-flex justify-content-end"
       >
         <div class="d-inline-block">
-          <h2 class="font-banner mb-45 mb-lg-5">
+          <h2 class="font-banner text-dark mb-45 mb-lg-5">
             訂製屬於您肌膚的獨特<br />保養處方
           </h2>
           <routerLink to="/custom" class="btn btn-primary-dark fs-4 px-5">
@@ -24,7 +24,7 @@
     <!-- 經典暢銷款 -->
     <section class="bg-home">
       <div class="bg-innerHotProducts container padding-hotProducts">
-        <h2 class="fs-3 text-primary-dark fw-normal text-center mb-6">
+        <h2 class="fs-3 text-primary-dark fw-medium text-center mb-6">
           經典暢銷款
         </h2>
         <div class="row justify-content-center">
@@ -44,7 +44,7 @@
             background-image: url('https://storage.googleapis.com/vue-course-api.appspot.com/lina-vueapi/1677852887676.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=kTg%2FfqwO3qQV3yMyjG2uRDV%2Ft97lxsBMRhjf5yHxPMhi3quHeU0NE7068X5KkG7CpWkJxG47f3EH7h%2BLGd2nkril7rq5Hl8MQH0SxM6SRrHHwv8R6s55L%2FF%2FFw8ufyPgBmxDpPQHZ17iKoy8bjB2TIxa1mOP0AmXUJoIrwR2sAf56oa%2F12oqxaJ6ED30qFvY81LR9qQK%2BhoIvR8MT%2Fvws2yOA5j5CpcsCAkcJBEa83mgynuEYddP2387YwyWix1%2FI5vur5d8VaSQTb%2B2cuK0s10YHHv9bCBCJbFAO0yFXSHVdLrZy1LcgZk89XOYUktWbskuFHbj%2FZbeLWAhOK3vfA%3D%3D');
           "
         >
-          <h3 class="home-width h4 d-inline-block text-dark text-center mb-0">
+          <h3 class="w-lg-50 h4 d-inline-block text-dark text-center mb-0">
             肌膚煥光亮白無暗沉
           </h3>
         </li>
@@ -55,9 +55,7 @@
             background-image: url('https://storage.googleapis.com/vue-course-api.appspot.com/lina-vueapi/1677852801351.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=DWhj%2B2nlevEdY6FtpnzMDE1UsaHfj11gpAC9DoLqgN6TrnX2BpS4N6wYThG4%2BgIGGr9%2FtBFlVfEvKa756mAToj26uVy%2F7nrZI%2BMF47ti2QaAk0Xzea3lf0ZiAkyE0GsS%2F0zuwukn0ky66TTHJj62OESy921kY66xZaALzpFD1R3u27x8HWPpC7Vd4PwHRdbT2bfCUPpiTKwRpILOo0eU6uAr%2Bxxu6mO0%2BQao1KZTHh%2B7jLf2nQIgHmfn9Nlfl%2FQCkCpx59uAKMf%2BxwPqlSragpuFF1T47FaGzmYaIS8N7YqfWAQV%2B3HCKbGOh5V3TfdAmUyNIObShxo3IdKmbUxVOQ%3D%3D');
           "
         >
-          <h3
-            class="home-width h4 d-lg-inline-block text-dark text-center mb-0"
-          >
+          <h3 class="w-lg-50 h4 d-lg-inline-block text-dark text-center mb-0">
             解決敏感肌膚的問題
           </h3>
         </li>
@@ -92,8 +90,10 @@
                 </div>
                 <div class="col-lg-6 d-flex align-items-center">
                   <div class="mx-lg-4 p-45 px-lg-4 py-lg-0">
-                    <h2 class="h4 fw-normal mb-2">淡斑亮白系列</h2>
-                    <p class="mb-3">
+                    <h2 class="h4 fw-medium text-primary-dark mb-2">
+                      淡斑亮白系列
+                    </h2>
+                    <p class="text-dark mb-3">
                       長期的日照導致肌膚暗沉無亮嗎？
                       為您量身打造的各階段美白計畫 讓肌膚煥然一新！
                     </p>
@@ -116,8 +116,10 @@
                 </div>
                 <div class="col-lg-6 d-flex align-items-center">
                   <div class="mx-lg-4 p-45 px-lg-4 py-lg-0">
-                    <h2 class="h4 fw-normal mb-2">深層保濕系列</h2>
-                    <p class="mb-3">
+                    <h2 class="h4 fw-medium mb-2 text-primary-dark">
+                      深層保濕系列
+                    </h2>
+                    <p class="text-dark mb-3">
                       總覺得肌膚嚴重缺水嗎？ 無論哪個季節都得讓肌膚喝飽 避免乾裂
                     </p>
                     <routerLink
@@ -139,8 +141,10 @@
                 </div>
                 <div class="col-lg-6 d-flex align-items-center">
                   <div class="mx-lg-4 p-45 px-lg-4 py-lg-0">
-                    <h2 class="h4 fw-normal mb-2">頂級呵護系列</h2>
-                    <p class="mb-3">
+                    <h2 class="h4 fw-medium mb-2 text-primary-dark">
+                      頂級呵護系列
+                    </h2>
+                    <p class="text-dark mb-3">
                       逆齡回到肌膚黃金狀態 維持光亮滑順 讓肌膚維持超緊實超自然
                     </p>
                     <routerLink

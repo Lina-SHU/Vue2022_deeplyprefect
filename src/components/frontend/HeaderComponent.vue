@@ -3,8 +3,8 @@
     class="position-fixed top-0 start-0 end-0 navbar navbar-expand-lg navbar-light bg-white-opacity z-index-5 py-3"
   >
     <div class="container-fluid">
-      <h1 class="mb-0">
-        <routerLink to="/" class="navbar-brand" href="#"
+      <h1 class="d-flex justify-content-center aligns-items.center mb-0">
+        <routerLink to="/" class="navbar-brand text-dark" href="#"
           >DeeplyPrefect
         </routerLink>
       </h1>
@@ -30,6 +30,9 @@
               <routerLink
                 to="/productlist"
                 class="nav-link py-3 py-lg-0 px-4"
+                :class="{
+                  'nav-item-active': $route.fullPath.match('/productlist'),
+                }"
                 @click.prevent="this.$refs.navbar.classList.remove('show')"
               >
                 保養去
@@ -40,6 +43,9 @@
                 to="/custom"
                 class="nav-link py-3 py-lg-0 px-4"
                 @click.prevent="this.$refs.navbar.classList.remove('show')"
+                :class="{
+                  'nav-item-active': $route.fullPath === '/custom',
+                }"
                 >客製保養</routerLink
               >
             </li>
@@ -48,6 +54,9 @@
                 to="/trials"
                 class="nav-link py-3 py-lg-0 px-4"
                 @click.prevent="this.$refs.navbar.classList.remove('show')"
+                :class="{
+                  'nav-item-active': $route.fullPath === '/trials',
+                }"
               >
                 立即體驗
               </routerLink>
@@ -65,6 +74,7 @@
       </div>
       <a href="#" class="position-relative" @click.prevent="openOffcanvas">
         <p
+          v-if="cartNum"
           class="cartNumIcon d-flex jusitfy-content-center align-items-center position-absolute bg-danger text-white rounded-circle mb-0"
         >
           {{ cartNum }}

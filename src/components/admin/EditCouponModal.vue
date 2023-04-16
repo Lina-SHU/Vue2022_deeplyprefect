@@ -65,11 +65,11 @@
               ></error-message>
             </div>
             <div class="mb-3">
-              <label for="couponDiscount" class="form-label">到期日</label>
+              <label for="couponDate" class="form-label">到期日</label>
               <VField
                 type="date"
                 class="form-control"
-                id="couponDiscount"
+                id="couponDate"
                 v-model="date"
                 name="到期日"
                 rules="required"

@@ -18,41 +18,40 @@
         <!-- 領取試用包 -->
         <div class="container py-3 py-md-5 py-lg-8">
           <div class="row justify-content-center mb-3 mb-lg-5">
-            <div class="col-lg-10">
+            <div class="col-lg-9">
               <ul class="list-unstyled">
                 <li
-                  class="row mb-4 gx-0"
+                  data-aos="fade-down"
+                  class="mb-4"
                   v-for="(trial, idx) in trials"
-                  :class="{
-                    'flex-lg-row-reverse': idx % 2 === 0,
-                  }"
                   :key="trial"
                 >
-                  <div class="col-lg-4 text-center">
-                    <div class="ratio ratio-1x1">
-                      <img
-                        class="img-fluid w-100 object-cover"
-                        :src="trial.imageUrl"
-                        :alt="trial.title"
-                      />
+                  <div
+                    class="d-lg-flex w-lg-65 bg-secondary-light p-3"
+                    :class="{
+                      'flex-lg-row-reverse': idx % 2 === 0,
+                      'ms-auto': idx % 2 === 0,
+                    }"
+                  >
+                    <div class="w-lg-35 text-center">
+                      <div class="bg-shadow h-100">
+                        <img
+                          class="img-fluid object-cover w-100 h-100"
+                          :src="trial.imageUrl"
+                          :alt="trial.title"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-lg-6 d-flex align-items-center">
-                    <div
-                      class="p-45 px-lg-4 py-lg-0 h-100 d-flex align-items-center position-relative"
-                    >
+                    <div class="w-lg-65 d-flex align-items-center bg-shadow">
                       <div
-                        class="bg-secondary position-absolute overflow-hidden"
-                        :class="{
-                          'shadowLeft-trial': idx % 2 === 0,
-                          'shadowRight-trial': idx % 2 !== 0,
-                        }"
-                      ></div>
-                      <div
-                        class="position-relative bg-white-opacity z-index-3 p-3"
+                        class="p-3 p-lg-4 h-100 d-flex align-items-center bg-white-opacity"
                       >
-                        <h2 class="h4 fw-normal mb-2">{{ trial.title }}</h2>
-                        <p class="mb-3" v-html="trial.content"></p>
+                        <div class="p-3">
+                          <h2 class="h4 text-primary-dark fw-normal mb-2">
+                            {{ trial.title }}
+                          </h2>
+                          <p class="mb-3" v-html="trial.content"></p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -65,7 +64,7 @@
               <!-- 試用包內容物 -->
               <div class="card rounded-0 border-0 mb-5">
                 <div
-                  class="card-header rounded-0 fs-4 bg-primary text-center fw-normal py-2 py-lg-3"
+                  class="card-header rounded-0 fs-4 bg-primary text-center text-primary-dark fw-normal py-2 py-lg-3"
                 >
                   試用包內容物
                 </div>
@@ -80,7 +79,7 @@
               <!-- 申請試用包說明 -->
               <div class="card rounded-0 border-0 mb-5">
                 <div
-                  class="card-header rounded-0 text-center fs-4 bg-primary fw-normal py-2 py-lg-3"
+                  class="card-header rounded-0 text-center fs-4 bg-primary text-primary-dark fw-normal py-2 py-lg-3"
                 >
                   申請試用包說明
                 </div>
@@ -95,7 +94,7 @@
               <!-- 申請試用包資料填寫 -->
               <div>
                 <h2
-                  class="text-center fs-4 fw-normal border border-primary bg-primary py-2 py-lg-3 mb-4"
+                  class="text-center fs-4 fw-normal border border-primary text-primary-dark bg-primary py-2 py-lg-3 mb-4"
                 >
                   申請試用包資料填寫
                 </h2>
@@ -104,7 +103,7 @@
                     <div class="text-end">
                       <span class="text-danger">*</span>為必填
                     </div>
-                    <label for="email">
+                    <label for="name">
                       姓名<span class="text-danger">*</span>
                     </label>
                     <VField
@@ -142,7 +141,7 @@
                     ></error-message>
                   </div>
                   <div class="mb-3">
-                    <label for="email">
+                    <label for="tel">
                       電話<span class="text-danger">*</span>
                     </label>
                     <VField
@@ -204,6 +203,8 @@
 </template>
 
 <script>
+import AOS from "aos";
+import "aos/dist/aos.css";
 import OrderSrv from "@/service/order-service.js";
 import productSrv from "@/service/product-service.js";
 import { mapActions, mapState } from "pinia";
@@ -262,6 +263,7 @@ export default {
   },
   mounted() {
     this.getTrial();
+    AOS.init({});
   },
 };
 </script>

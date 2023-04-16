@@ -20,7 +20,7 @@
         ></div>
         <div class="container position-relative z-index-3 py-7">
           <div class="row justify-content-center">
-            <div class="col-md-10 col-md-8">
+            <div class="col-md-10 col-lg-8">
               <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
@@ -29,7 +29,7 @@
                   <li class="breadcrumb-item">
                     <routerLink to="/productlist">保養去</routerLink>
                   </li>
-                  <li class="breadcrumb-item">
+                  <li class="breadcrumb-item text-primary-dark">
                     {{ product.title }}
                   </li>
                 </ol>
@@ -88,31 +88,40 @@
                 </div>
               </div>
               <!-- 商品詳情 -->
-              <h3
-                class="h5 fw-normal border-bottom pb-1 text-primary-dark mb-3"
-              >
-                商品詳情
-              </h3>
-              <p class="mb-5" v-html="product.contentList"></p>
-              <!-- 購物須知 -->
-              <h3
-                class="h5 fw-normal border-bottom pb-1 text-primary-dark mb-3"
-              >
-                購物須知
-              </h3>
-              <ul class="mb-7">
-                <li>
-                  收到商品後，若有發現包裝不完整，建議您拍照存證並與我們聯繫：客服專線：02-218-8965。
-                </li>
-                <li>
-                  依消費者保護法規定，商品皆享有七天鑑賞期(注意：鑑賞期不等於試用期)，須以完整包裝進行退貨處理。
-                </li>
-                <li>
-                  提醒您：當付款完成後，我們不會主動以電話方式聯繫您進行 ATM
-                  操作修正款項或詢問信用卡等資料，若有接獲請撥打 165
-                  反詐騙專線求證，以確保您的權益。
-                </li>
-              </ul>
+              <div class="row justify-content-center">
+                <div class="col-lg-10">
+                  <h3
+                    class="h5 fw-normal px-2 py-1 text-white bg-primary-dark d-inline-block"
+                  >
+                    商品詳情
+                  </h3>
+                  <div class="p-3 mb-5 border border-secondary">
+                    <p v-html="product.contentList" class="mb-0"></p>
+                  </div>
+                  <!-- 購物須知 -->
+                  <h3
+                    class="h5 fw-normal px-2 py-1 text-white bg-primary-dark d-inline-block"
+                  >
+                    購物須知
+                  </h3>
+                  <div class="p-3 mb-7 border border-secondary">
+                    <ul>
+                      <li class="mb-1">
+                        收到商品後，若有發現包裝不完整，建議您拍照存證並與我們聯繫：客服專線：02-218-8965。
+                      </li>
+                      <li class="mb-1">
+                        依消費者保護法規定，商品皆享有七天鑑賞期(注意：鑑賞期不等於試用期)，須以完整包裝進行退貨處理。
+                      </li>
+                      <li>
+                        提醒您：當付款完成後，我們不會主動以電話方式聯繫您進行 ATM
+                        操作修正款項或詢問信用卡等資料，若有接獲請撥打 165
+                        反詐騙專線求證，以確保您的權益。
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
               <!-- 其他推薦商品 -->
               <h3 class="fs-4 text-center text-primary-dark fw-normal mb-5">
                 經典暢銷款
@@ -164,13 +173,13 @@ export default {
             .split("<br>")
             .map((item) => `<li>${item}</li>`)
             .join("");
-          this.product.contentList = `<ul>${content}</ul>`;
+          this.product.contentList = `<ul class="mb-0">${content}</ul>`;
           // 內容
           const desc = this.product.description
             .split("<br>")
             .map((item) => `<li>${item}</li>`)
             .join("");
-          this.product.descList = `<ul>${desc}</ul>`;
+          this.product.descList = `<ul class="mb-0">${desc}</ul>`;
         } else {
           Swal.fire({
             title: data.msg,
