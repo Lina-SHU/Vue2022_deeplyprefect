@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="bg-homeSection position-relative">
-      <div class="bg-prds bg-white">
+      <div class="bg-prds bg-secondary-light2">
         <!-- 商品列表主視覺 -->
         <div
           class="bg-prdBanner position-relative"
@@ -16,7 +16,7 @@
           </div>
         </div>
         <!-- 領取試用包 -->
-        <div class="container py-3 py-md-5 py-lg-8">
+        <div class="container pt-3 pb-5 pt-md-5 py-lg-8">
           <div class="row justify-content-center mb-3 mb-lg-5">
             <div class="col-lg-9">
               <ul class="list-unstyled">
