@@ -33,7 +33,7 @@
               >
             </li>
             <li class="nav-item">
-              <button class="btn btn-primary ms-2" @click="logout">登出</button>
+              <button type="button" class="btn btn-primary ms-2" @click="logout">登出</button>
             </li>
           </ul>
         </div>

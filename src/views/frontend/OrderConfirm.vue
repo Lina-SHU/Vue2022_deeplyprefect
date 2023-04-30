@@ -74,9 +74,9 @@
                         class="img-fluid object-cover"
                       />
                     </div>
-                    <routerLink :to="`/product/${order.product.id}`">
+                    <RouterLink :to="`/product/${order.product.id}`">
                       {{ $currency(order.product.title) }}
-                    </routerLink>
+                    </RouterLink>
                   </td>
                   <td class="text-end">
                     {{ $currency(order.product.price) }}

@@ -47,6 +47,6 @@ app.use(LoadingPlugin);
 
 app.component("VForm", Form);
 app.component("VField", Field);
-app.component("error-message", ErrorMessage);
+app.component("ErrorMessage", ErrorMessage);
 
 app.mount("#app");

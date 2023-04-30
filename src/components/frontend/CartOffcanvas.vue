@@ -11,11 +11,11 @@
     <div class="offcanvas-body">
       <div v-if="!carts.carts?.length">
         <p class="text-center">目前購物車是空的喔！</p>
-        <routerLink
+        <RouterLink
           to="/productlist"
           class="btn btn-primary d-block w-100"
           @click.prevent="closeOffcanvas"
-          >保養去</routerLink
+          >保養去</RouterLink
         >
       </div>
       <div v-else class="d-flex flex-column justify-content-between h-100">
@@ -66,14 +66,14 @@
             </tr>
           </tfoot>
         </table>
-        <routerLink
+        <RouterLink
           to="/checkCart"
           type="button"
           class="btn btn-primary d-block w-100"
           @click="closeOffcanvas"
         >
           立即結帳
-        </routerLink>
+        </RouterLink>
       </div>
     </div>
   </div>

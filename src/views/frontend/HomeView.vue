@@ -15,9 +15,9 @@
           <h2 class="font-banner text-dark mb-45 mb-lg-5">
             訂製屬於您肌膚的獨特<br />保養處方
           </h2>
-          <routerLink to="/custom" class="btn btn-primary-dark fs-4 px-5">
+          <RouterLink to="/custom" class="btn btn-primary-dark fs-4 px-5">
             客製保養
-          </routerLink>
+          </RouterLink>
         </div>
       </div>
     </section>
@@ -97,10 +97,10 @@
                       長期的日照導致肌膚暗沉無亮嗎？
                       為您量身打造的各階段美白計畫 讓肌膚煥然一新！
                     </p>
-                    <routerLink
+                    <RouterLink
                       to="/productlist?category=淡斑亮白系列"
                       class="btn-go text-primary-dark"
-                      >前往</routerLink
+                      >前往</RouterLink
                     >
                   </div>
                 </div>
@@ -122,10 +122,10 @@
                     <p class="text-dark mb-3">
                       總覺得肌膚嚴重缺水嗎？ 無論哪個季節都得讓肌膚喝飽 避免乾裂
                     </p>
-                    <routerLink
+                    <RouterLink
                       to="/productlist?category=深層保濕系列"
                       class="btn-go text-primary-dark"
-                      >前往</routerLink
+                      >前往</RouterLink
                     >
                   </div>
                 </div>
@@ -147,10 +147,10 @@
                     <p class="text-dark mb-3">
                       逆齡回到肌膚黃金狀態 維持光亮滑順 讓肌膚維持超緊實超自然
                     </p>
-                    <routerLink
+                    <RouterLink
                       to="/productlist?category=頂級呵護系列"
                       class="btn-go text-primary-dark"
-                      >前往</routerLink
+                      >前往</RouterLink
                     >
                   </div>
                 </div>
@@ -168,9 +168,9 @@
       "
     >
       <h2 class="h4 text-white mb-4">搶先試試神奇肌效</h2>
-      <routerLink to="/trials" class="btn-cta bg-white text-primary-dark">
+      <RouterLink to="/trials" class="btn-cta bg-white text-primary-dark">
         領取試用包
-      </routerLink>
+      </RouterLink>
     </section>
   </main>
 </template>

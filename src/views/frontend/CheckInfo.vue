@@ -67,9 +67,9 @@
                         class="img-fluid object-cover"
                       />
                     </div>
-                    <routerLink :to="`/product/${cart.product.id}`">
+                    <RouterLink :to="`/product/${cart.product.id}`">
                       {{ cart.product.title }}
-                    </routerLink>
+                    </RouterLink>
                   </td>
                   <td class="text-end">
                     {{ $currency(cart.product.price) }}
@@ -123,10 +123,10 @@
                   rules="required"
                   v-model.trim="user.name"
                 ></VField>
-                <error-message
+                <ErrorMessage
                   name="姓名"
                   class="invalid-feedback"
-                ></error-message>
+                ></ErrorMessage>
               </div>
               <div class="mb-3">
                 <label for="email">
@@ -142,10 +142,10 @@
                   rules="email|required"
                   v-model="user.email"
                 ></VField>
-                <error-message
+                <ErrorMessage
                   name="email"
                   class="invalid-feedback"
-                ></error-message>
+                ></ErrorMessage>
               </div>
               <div class="mb-3">
                 <label for="tel">
@@ -161,10 +161,10 @@
                   :rules="isPhone"
                   v-model.trim="user.tel"
                 ></VField>
-                <error-message
+                <ErrorMessage
                   name="電話"
                   class="invalid-feedback"
-                ></error-message>
+                ></ErrorMessage>
               </div>
               <div class="mb-3">
                 <label for="address">
@@ -180,10 +180,10 @@
                   rules="required"
                   v-model.trim="user.address"
                 ></VField>
-                <error-message
+                <ErrorMessage
                   name="地址"
                   class="invalid-feedback"
-                ></error-message>
+                ></ErrorMessage>
               </div>
               <div class="mb-3">
                 <label for="message" class="form-label">留言</label>

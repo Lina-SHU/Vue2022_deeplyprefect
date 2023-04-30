@@ -1,4 +1,4 @@
 <template>
   <p>404</p>
-  <routerLink to="/productlist"> 逛街去 </routerLink>
+  <RouterLink to="/productlist"> 逛街去 </RouterLink>
 </template>

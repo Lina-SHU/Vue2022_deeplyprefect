@@ -24,10 +24,10 @@
               <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                    <routerLink to="/">DeeplyPrefect</routerLink>
+                    <RouterLink to="/">DeeplyPrefect</RouterLink>
                   </li>
                   <li class="breadcrumb-item">
-                    <routerLink to="/productlist">保養去</routerLink>
+                    <RouterLink to="/productlist">保養去</RouterLink>
                   </li>
                   <li class="breadcrumb-item text-primary-dark">
                     {{ product.title }}

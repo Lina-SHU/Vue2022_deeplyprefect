@@ -26,10 +26,10 @@
                 rules="required"
                 :class="{ 'is-invalid': errors['名稱'] }"
               />
-              <error-message
+              <ErrorMessage
                 name="名稱"
                 class="invalid-feedback"
-              ></error-message>
+              ></ErrorMessage>
             </div>
             <div class="mb-3">
               <label for="couponCode" class="form-label">代碼</label>
@@ -42,10 +42,10 @@
                 rules="required"
                 :class="{ 'is-invalid': errors['代碼'] }"
               />
-              <error-message
+              <ErrorMessage
                 name="代碼"
                 class="invalid-feedback"
-              ></error-message>
+              ></ErrorMessage>
             </div>
             <div class="mb-3">
               <label for="couponDiscount" class="form-label">折扣數</label>
@@ -59,10 +59,10 @@
                 rules="required"
                 :class="{ 'is-invalid': errors['折扣數'] }"
               />
-              <error-message
+              <ErrorMessage
                 name="折扣數"
                 class="invalid-feedback"
-              ></error-message>
+              ></ErrorMessage>
             </div>
             <div class="mb-3">
               <label for="couponDate" class="form-label">到期日</label>
@@ -75,10 +75,10 @@
                 rules="required"
                 :class="{ 'is-invalid': errors['到期日'] }"
               />
-              <error-message
+              <ErrorMessage
                 name="到期日"
                 class="invalid-feedback"
-              ></error-message>
+              ></ErrorMessage>
             </div>
             <div class="mb-3">
               <div class="form-check">

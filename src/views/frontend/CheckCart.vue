@@ -58,10 +58,10 @@
                 <tr>
                   <td colspan="5" class="py-5 text-center text-dark">
                     <p class="mb-3">目前購物車是空的喔！</p>
-                    <routerLink
+                    <RouterLink
                       to="/productlist"
                       class="btn btn-lg btn-primary"
-                      >保養去</routerLink
+                      >保養去</RouterLink
                     >
                   </td>
                 </tr>
@@ -76,9 +76,9 @@
                         class="img-fluid object-cover"
                       />
                     </div>
-                    <routerLink :to="`/product/${cart.product.id}`">
+                    <RouterLink :to="`/product/${cart.product.id}`">
                       {{ cart.product.title }}
-                    </routerLink>
+                    </RouterLink>
                   </td>
                   <td class="text-end d-none d-lg-table-cell">
                     {{ $currency(cart.product.price) }}
@@ -122,13 +122,13 @@
               v-if="carts.carts?.length"
               class="d-flex justify-content-between"
             >
-              <routerLink
+              <RouterLink
                 to="/productlist"
                 class="btn btn-outline-primary-dark"
-                >繼續購物</routerLink
+                >繼續購物</RouterLink
               >
-              <routerLink to="/checkInfo" class="btn btn-primary-dark ms-2"
-                >前往結帳</routerLink
+              <RouterLink to="/checkInfo" class="btn btn-primary-dark ms-2"
+                >前往結帳</RouterLink
               >
             </div>
           </div>

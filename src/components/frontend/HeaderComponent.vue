@@ -4,9 +4,9 @@
   >
     <div class="container-fluid">
       <h1 class="d-flex justify-content-center aligns-items.center mb-0">
-        <routerLink to="/" class="navbar-brand text-dark" href="#"
+        <RouterLink to="/" class="navbar-brand text-dark" href="#"
           >DeeplyPrefect
-        </routerLink>
+        </RouterLink>
       </h1>
       <div class="ms-auto">
         <button
@@ -27,7 +27,7 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <routerLink
+              <RouterLink
                 to="/productlist"
                 class="nav-link py-3 py-lg-0 px-4"
                 :class="{
@@ -36,21 +36,21 @@
                 @click.prevent="this.$refs.navbar.classList.remove('show')"
               >
                 保養去
-              </routerLink>
+              </RouterLink>
             </li>
             <li class="nav-item">
-              <routerLink
+              <RouterLink
                 to="/custom"
                 class="nav-link py-3 py-lg-0 px-4"
                 @click.prevent="this.$refs.navbar.classList.remove('show')"
                 :class="{
                   'nav-item-active': $route.fullPath === '/custom',
                 }"
-                >客製保養</routerLink
+                >客製保養</RouterLink
               >
             </li>
             <li class="nav-item">
-              <routerLink
+              <RouterLink
                 to="/trials"
                 class="nav-link py-3 py-lg-0 px-4"
                 @click.prevent="this.$refs.navbar.classList.remove('show')"
@@ -59,7 +59,7 @@
                 }"
               >
                 立即體驗
-              </routerLink>
+              </RouterLink>
             </li>
             <!-- <li class="nav-item">
               <a

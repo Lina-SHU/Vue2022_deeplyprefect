@@ -38,10 +38,10 @@
                         上傳檔案
                       </button>
                     </div>
-                    <error-message
+                    <ErrorMessage
                       name="圖片網址"
                       class="invalid-feedback"
-                    ></error-message>
+                    ></ErrorMessage>
                   </div>
                   <img
                     class="img-fluid"
@@ -101,10 +101,10 @@
                     :class="{ 'is-invalid': errors['標題'] }"
                     rules="required"
                   />
-                  <error-message
+                  <ErrorMessage
                     name="標題"
                     class="invalid-feedback"
-                  ></error-message>
+                  ></ErrorMessage>
                 </div>
 
                 <div class="row">
@@ -120,10 +120,10 @@
                       :class="{ 'is-invalid': errors['分類'] }"
                       rules="required"
                     />
-                    <error-message
+                    <ErrorMessage
                       name="分類"
                       class="invalid-feedback"
-                    ></error-message>
+                    ></ErrorMessage>
                   </div>
                   <div class="mb-3 col-md-6">
                     <label for="unit" class="form-label">單位</label>
@@ -137,10 +137,10 @@
                       :class="{ 'is-invalid': errors['單位'] }"
                       rules="required"
                     />
-                    <error-message
+                    <ErrorMessage
                       name="單位"
                       class="invalid-feedback"
-                    ></error-message>
+                    ></ErrorMessage>
                   </div>
                 </div>
 
@@ -158,10 +158,10 @@
                       :class="{ 'is-invalid': errors['原價'] }"
                       rules="required"
                     />
-                    <error-message
+                    <ErrorMessage
                       name="原價"
                       class="invalid-feedback"
-                    ></error-message>
+                    ></ErrorMessage>
                   </div>
                   <div class="mb-3 col-md-6">
                     <label for="price" class="form-label">售價</label>
@@ -176,10 +176,10 @@
                       :class="{ 'is-invalid': errors['售價'] }"
                       rules="required"
                     />
-                    <error-message
+                    <ErrorMessage
                       name="售價"
                       class="invalid-feedback"
-                    ></error-message>
+                    ></ErrorMessage>
                   </div>
                 </div>
                 <hr />
@@ -251,6 +251,7 @@
                 class="mt-3"
               >
                 <button
+                  type="button"
                   class="btn btn-outline-primary btn-sm d-block w-100"
                   @click="temp.imagesUrl.push('')"
                 >
@@ -259,6 +260,7 @@
               </div>
               <div v-else class="mt-3">
                 <button
+                  type="button"
                   class="btn btn-outline-danger btn-sm d-block w-100"
                   @click="temp.imagesUrl.pop()"
                 >

@@ -16,10 +16,10 @@
               rules="email|required"
             ></VField>
             <label for="email">帳號</label>
-            <error-message
+            <ErrorMessage
               name="email"
               class="invalid-feedback"
-            ></error-message>
+            ></ErrorMessage>
           </div>
           <div class="form-floating mb-3">
             <VField
@@ -33,7 +33,7 @@
               name="密碼"
             ></VField>
             <label for="password">密碼</label>
-            <error-message name="密碼" class="invalid-feedback"></error-message>
+            <ErrorMessage name="密碼" class="invalid-feedback"></ErrorMessage>
           </div>
           <div class="d-grid gap-2">
             <button class="btn btn-primary" type="submit">登入</button>
