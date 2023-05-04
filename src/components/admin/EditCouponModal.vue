@@ -26,10 +26,7 @@
                 rules="required"
                 :class="{ 'is-invalid': errors['名稱'] }"
               />
-              <ErrorMessage
-                name="名稱"
-                class="invalid-feedback"
-              ></ErrorMessage>
+              <ErrorMessage name="名稱" class="invalid-feedback"></ErrorMessage>
             </div>
             <div class="mb-3">
               <label for="couponCode" class="form-label">代碼</label>
@@ -42,10 +39,7 @@
                 rules="required"
                 :class="{ 'is-invalid': errors['代碼'] }"
               />
-              <ErrorMessage
-                name="代碼"
-                class="invalid-feedback"
-              ></ErrorMessage>
+              <ErrorMessage name="代碼" class="invalid-feedback"></ErrorMessage>
             </div>
             <div class="mb-3">
               <label for="couponDiscount" class="form-label">折扣數</label>
@@ -82,7 +76,7 @@
             </div>
             <div class="mb-3">
               <div class="form-check">
-                <VField
+                <input
                   id="is_enabled"
                   class="form-check-input"
                   type="checkbox"
@@ -149,7 +143,7 @@ export default {
           title: "優惠券折扣不得小於 0 ！",
           icon: "warning",
         });
-        return
+        return;
       }
       //
       if (new Date(this.date) < new Date()) {
