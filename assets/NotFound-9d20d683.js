@@ -1,0 +1,1 @@
+import{_ as t,r as o,o as n,c as s,f as a,w as c,F as r,e as _,g as l}from"./index-2ee99502.js";const d={},u=_("p",null,"404",-1);function f(i,p){const e=o("RouterLink");return n(),s(r,null,[u,a(e,{to:"/productlist"},{default:c(()=>[l(" 逛街去 ")]),_:1})],64)}const x=t(d,[["render",f]]);export{x as default};
